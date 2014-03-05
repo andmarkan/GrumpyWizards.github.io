@@ -1,0 +1,31 @@
+html {
+  overflow-y: scroll;
+}
+html,
+body {
+  height: 100%;
+  font-size: 14px;
+  font-family: arial;
+  font-weight: 300;
+}
+.site-header {
+  background-image: url(img/header.jpg);
+  height: 400px;
+  padding: 20px 0;
+  color: #fff;
+  font-size: 1.8em;
+  text-align: center;
+  text-shadow: 0px 1px 1px #4E4E4E;
+}
+.site-logo {
+  width: 100px;
+  border-radius: 6px;
+}
+.section {
+  padding: 30px 0;
+}
+.sub-header {
+  font-size: 0.7em;
+  color: #bbb;
+  margin-left: 20px;
+}
