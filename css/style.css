@@ -3,8 +3,9 @@ body {
 	height: 100%;
 	font-family: 'Century Gothic', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 15px;
 	color: #476772;
+	line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,8 +49,14 @@ pre {
 
 	pre code {
 		display: block;
-		padding: 3px;
 	}
+
+code {
+	padding: 2px;
+	background-color: #faf8f8;
+	border: 1px solid #eee;
+	border-radius: 6px;
+}
 
 .container {
 	max-width: 800px;
@@ -121,6 +128,17 @@ pre {
 	color: #a3a3a3;
 	padding: 0 0 0 15px;
 	border-left: 1px solid #b0dae9;
+}
+
+.btn {
+	display: block;
+	padding: 10px;
+	margin: 30px 0 0 0;
+	text-align: center;
+	background: transparent;
+	color: #3cf;
+	border: 1px solid #3cf;
+	border-radius: 6px;
 }
 
 .muted {
