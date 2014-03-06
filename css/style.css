@@ -35,6 +35,13 @@ a {
 		color: #dd3a82;
 	}
 
+code {
+	padding: 2px;
+	background-color: #faf8f8;
+	border: 1px solid #eee;
+	border-radius: 6px;
+}
+
 pre {
 	width: 100%;
 	padding: 10px;
@@ -49,14 +56,10 @@ pre {
 
 	pre code {
 		display: block;
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
 	}
-
-code {
-	padding: 2px;
-	background-color: #faf8f8;
-	border: 1px solid #eee;
-	border-radius: 6px;
-}
 
 .container {
 	max-width: 800px;
