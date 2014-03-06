@@ -53,6 +53,8 @@ a {
 	padding: 20px 0;
 	color: #fff;
 	text-align: center;
+	-webkit-text-shadow: 0 1px 0 #4e4e4e;
+	text-shadow: 0 1px 0 #4e4e4e;
 }
 
 .site-logo {
@@ -63,7 +65,7 @@ a {
 }
 
 .site-title {
-	font-size: 4em;
+	font-size: 2.5em;
 	padding: 0.75em 0 0.5em;
 }
 
