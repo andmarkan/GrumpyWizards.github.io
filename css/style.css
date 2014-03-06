@@ -34,6 +34,23 @@ a {
 		color: #dd3a82;
 	}
 
+pre {
+	width: 100%;
+	padding: 10px;
+	overflow: auto;
+	background-color: #fcfeff;
+	box-shadow: 0 0 5px -1px #3cf;
+	border-radius: 4px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+	pre code {
+		display: block;
+		padding: 3px;
+	}
+
 .container {
 	max-width: 800px;
 	width: 90%;
