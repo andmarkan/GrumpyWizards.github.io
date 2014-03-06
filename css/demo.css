@@ -1,0 +1,11 @@
+.demo .grid {
+	border: 1px solid #dd3a82;
+	border-radius: 6px;
+}
+
+.demo .cell {
+	background-color: #fcfeff;
+	box-shadow: 0 0 5px -1px #3cf;
+	border-radius: 6px;
+	padding: 20px 0;
+}
