@@ -35,6 +35,12 @@ a {
 		color: #dd3a82;
 	}
 
+ul {
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+}
+
 code {
 	padding: 2px;
 	background-color: #faf8f8;
