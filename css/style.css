@@ -1,155 +1,155 @@
 html,
 body {
-	height: 100%;
-	font-family: 'Century Gothic', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	font-size: 15px;
-	color: #476772;
-	line-height: 1.75;
+  height: 100%;
+  font-family: 'Century Gothic', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #476772;
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
-	height: 0;
-	width: 70%;
-	max-width: 600px;
-	border: 0;
-	border-top: 1px solid #f2f2f2;
-	margin: 2em auto 0;
+  height: 0;
+  width: 70%;
+  max-width: 600px;
+  border: 0;
+  border-top: 1px solid #f2f2f2;
+  margin: 2em auto 0;
 }
 
 a {
-	color: #526870;
-	text-decoration: none;
-	-moz-transition: color 0.2s;
-	-o-transition: color 0.2s;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+  color: #526870;
+  text-decoration: none;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
-	a:hover {
-		color: #dd3a82;
-	}
+  a:hover {
+    color: #dd3a82;
+  }
 
 ul {
-	padding: 0;
-	overflow: hidden;
-	list-style: none;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
 }
 
 code {
-	padding: 2px;
-	background-color: #faf8f8;
-	border: 1px solid #eee;
-	border-radius: 6px;
+  padding: 2px;
+  background-color: #faf8f8;
+  border: 1px solid #eee;
+  border-radius: 6px;
 }
 
 pre {
-	width: 100%;
-	padding: 10px;
-	overflow: auto;
-	background-color: #fcfeff;
-	box-shadow: 0 0 5px -1px #3cf;
-	border-radius: 4px;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+  background-color: #fcfeff;
+  box-shadow: 0 0 5px -1px #3cf;
+  border-radius: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-	pre code {
-		display: block;
-		background-color: transparent;
-		border: 0;
-		border-radius: 0;
-	}
+  pre code {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
 
 .container {
-	max-width: 800px;
-	width: 90%;
-	margin: auto;
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
 }
 
 .site-header {
-	background-image: url(/img/header.jpg);
-	background-position: bottom;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	width: 100%;
-	min-height: 45%;
-	padding: 20px 0;
-	color: #fff;
-	text-align: center;
-	-webkit-text-shadow: 0 1px 0 #4e4e4e;
-	text-shadow: 0 1px 0 #4e4e4e;
+  background-image: url(/img/header.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  min-height: 45%;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  -webkit-text-shadow: 0 1px 0 #4e4e4e;
+  text-shadow: 0 1px 0 #4e4e4e;
 }
 
 .project-header {
-	width: 100%;
-	min-height: 25%;
-	padding: 20px 0;
-	text-align: center;
+  width: 100%;
+  min-height: 25%;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .site-logo {
-	width: 100px;
-	background-color: rgba(255, 255, 255, 0.3);
-	border-radius: 30em;
-	padding: 16px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 30em;
+  padding: 16px;
 }
 
 .project-logo {
-	width: 80px;
+  width: 80px;
 }
 
 .site-title,
 .project-title {
-	font-size: 2.5em;
-	padding: 0.75em 0 0.5em;
+  font-size: 2.5em;
+  padding: 0.75em 0 0.5em;
 }
 
 .site-description {
-	font-size: 1.2em;
-	color: #c4c4c4;
+  font-size: 1.2em;
+  color: #c4c4c4;
 }
 
 .project-description {
-	font-size: 1.2em;
-	color: #a3a3a3;
+  font-size: 1.2em;
+  color: #a3a3a3;
 }
 
 .section {
-	padding: 30px 0 0;
+  padding: 30px 0 0;
 }
 
 .section-header {
-	font-size: 3em;
+  font-size: 3em;
 }
 
 .section-sub-header {
-	font-size: 1.25em;
-	color: #a3a3a3;
-	padding: 0 0 0 15px;
-	border-left: 1px solid #b0dae9;
+  font-size: 1.25em;
+  color: #a3a3a3;
+  padding: 0 0 0 15px;
+  border-left: 1px solid #b0dae9;
 }
 
 .btn {
-	display: block;
-	padding: 10px;
-	margin: 30px 0 0 0;
-	text-align: center;
-	background: transparent;
-	color: #3cf;
-	border: 1px solid #3cf;
-	border-radius: 6px;
+  display: block;
+  padding: 10px;
+  margin: 30px 0 0 0;
+  text-align: center;
+  background: transparent;
+  color: #3cf;
+  border: 1px solid #3cf;
+  border-radius: 6px;
 }
 
 .muted {
-	color: #a3a3a3;
+  color: #a3a3a3;
 }
