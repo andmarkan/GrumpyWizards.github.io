@@ -1,4 +1,4 @@
-GrumpyWizards.github.io
+Grumpy Wizards
 =======================
 
 Grumpy Wizards website
