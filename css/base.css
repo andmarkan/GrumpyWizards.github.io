@@ -64,6 +64,7 @@ code {
 	font-size: 15px;
 	white-space: nowrap;
 	border-radius: 6px;
+	line-height: 1.2;
 }
 
 pre {
