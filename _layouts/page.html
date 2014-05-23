@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    {% include page-header.html %}
+    <div class="content animated fadeInUp">
+        {% include page-intro.html %}
+        <hr />
+        <section class="section container">
+            <div class="grid grid-medium-full">
+                <div class="section-body cell">
+                    {{ content }}
+                </div>
+            </div>
+        </section>
+    </div>
+    {% include footer.html %}
+</body>
+</html>

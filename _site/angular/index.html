@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+	<meta charset="utf-8">
+	<title>Angular | Grumpy Wizards</title>
+	<meta name="copyright" content="Grumpy Wizards 2014">
+	<meta name="description" content="We're not actually that grumpy, but we are wizards when it comes to code." />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/normalize.min.css">
+	<link rel="stylesheet" href="/css/grid.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+
+</head>
+</head>
+<body>
+    <header class="project-header grid grid-center">
+    <div class="cell cell-width-90 cell-offset-5">
+        <a href="/">
+            <img class="project-logo" src="/img/gw.png" alt="G"></a>
+        <h1 class="project-title">Angular</h1>
+        <div class="project-description">Best Practices for AngularJS Developers</div>
+    </div>
+</header>
+
+    <div class="content animated fadeInUp">
+        <section class="section container">
+    <div class="grid grid-medium-full">
+        <div class="section-body cell">
+            I've used AngularJS a lot over the past couple of years and I've found more often than not that there are at least 3 different way of accomplishing the same thing. I've always thought a guide of how best to use it would be helpful. So here it is.
+			<p>
+                <a href="https://github.com/GrumpyWizards/Angular" class="btn">View project on Github</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+        <hr />
+        <section class="section container">
+            <div class="grid grid-medium-full">
+                <div class="section-body cell">
+                    <h2 id="feature-driven-development">Feature Driven Development</h2>
+<p>See: http://www.johnpapa.net/angular-growth-structure/</p>
+
+<p>Feature driven development is more about how you organise and structure your application than how you code the functionality. Rather than produce 1 large complicated app you create discreet pieces and couple them together. </p>
+
+<h3 id="by-type---no">By type - No</h3>
+<p>Files organised by type means having your controllers, services, <br />
+filters, directives, views etc. placed in their respective folders. <br />
+Nothing is discrete, development and testing is done in large <br />
+blocks. Large applications quickly become overly complex.</p>
+
+<pre><code>|
+|- controllers
+|--- controllers.mod.js
+|--- home.ctrl.js
+|--- about.ctrl.js
+|--- contact.ctrl.js
+|--- login.ctrl.js
+|- services
+|--- auth.svc.js
+</code></pre>
+
+<h3 id="by-feature---yes">By Feature - Yes</h3>
+<p>The application is organised by the self-contained features that it<br />
+requires. Each feature can be plugged into or out of the application<br />
+with relative ease. It is not baked directly into the application’s<br />
+foundations. Both development and testing is conducted within the<br />
+scope of each feature.</p>
+
+<pre><code>|
+|- home
+|--- home.mod.js
+|--- home.ctrl.js
+|- about
+|--- about.mod.js
+|--- about.ctrl.js
+|- contact
+|--- contact.mod.js
+|--- contact.ctrl.js
+|- login
+|--- login.mod.js
+|--- login.ctrl.js
+|--- auth.svc.js
+</code></pre>
+
+<p><strong>See the <a href="http://grumpywizards.com/ngTemplate">ngTemplate project</a> <br />
+for an example of how to organise your application and what each <br />
+directory is used for.</strong></p>
+
+<h2 id="module-declaration">Module Declaration</h2>
+<p>Modules should be declared using the global <code>angular</code> variable like so:</p>
+
+<pre><code>// app module
+angular.module('demo', [
+               'demo.features.login'
+]);
+
+// sub-module
+angular.module('demo.features.login');
+</code></pre>
+
+<ul>
+  <li>No additional globabl variables are required</li>
+  <li>You can access your modules from everywhere </li>
+  <li>Modules can be placed into different files</li>
+  <li>You can use the function-form of <code>use strict</code>;</li>
+</ul>
+
+<h2 id="dependency-injection">Dependency Injection</h2>
+<p>See: http://docs.angularjs.org/guide/dev_guide.services.managing_dependencies</p>
+
+<p>There are two types of dependencies you can include in your modules <br />
+and controllers. The first is listing your required modules and the<br />
+second is injecting services into your controllers.</p>
+
+<h3 id="requiring-modules">Requiring modules</h3>
+
+<pre><code>angular.module('demo', [
+               'demo.features.login
+])
+</code></pre>
+
+<p>This is a fairly standard process of how we require modules in AngularJS. <br />
+Naming conventions are covered in the next section but you can see here <br />
+that required modules should be grouped by feature.</p>
+
+<h3 id="injecting-dependencies">Injecting dependencies</h3>
+
+<p>Should be done explicity to prevent errors during minification and disjointed<br />
+dependencies within your code.</p>
+
+<pre><code>.controller('homeCtrl', ['$scope', '$state', function ($scope, $state) { }])
+</code></pre>
+
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>It is important to provide distinct names to components of your <br />
+application. This mitigates the possibility that the angular source,<br />
+3rd party libraries and shared components will have clashing module <br />
+names, giving unexpected results.</p>
+
+<h3 id="prefixing">Prefixing</h3>
+<p>All components (directives, controllers, services) must be<br />
+prefixed with an identifier that is relevant to their scope:</p>
+
+<ul>
+  <li>if shared across all applications use a company prefix: ‘wiz’ for Grumpy<br />
+Wizards for example.</li>
+  <li>if exclusive to an application use an application prefix: ‘todo’ if<br />
+Grumpy Wizards built a todo list app for example.</li>
+  <li><em>controllers do not need to be prefixed</em></li>
+</ul>
+
+<h3 id="postfixing">Postfixing</h3>
+<p>The following component types should be postfixed as per the examples below:</p>
+
+<ul>
+  <li>Controllers: MarkdownCtrl</li>
+  <li>Services: wizMarkdownSvc</li>
+  <li>Filters: wizMarkdownFltr</li>
+  <li>Directives: do not require postfixing wizMarkdown &gt; becomes <code>wiz-markdown</code> in markup.</li>
+</ul>
+
+<h3 id="capitalisation">Capitalisation</h3>
+<p>Controllers are considered classes and as such they should have a leading<br />
+capital letter: MarkdownCtrl, all other components should start with lower<br />
+case e.g. wizMarkdown.</p>
+
+<h3 id="modules">Modules</h3>
+<p>Module namespacing format should following this pattern:</p>
+
+<pre><code>&lt;application&gt;.&lt;[api,component,feature,service]&gt;.&lt;name&gt;
+</code></pre>
+
+<p>Examples:<br />
+- wiz.service.addNumbers<br />
+- todo.component.markdown<br />
+- reader.todo.api.email<br />
+- users.feature.about</p>
+
+<h3 id="filenames">Filenames</h3>
+<p>To aid readability in the solution the type of component should be <br />
+appended to each file name, for example:</p>
+
+<ul>
+  <li>dashboard.mod.js  - the module declaration</li>
+  <li>dashboard.dir.js – a directive</li>
+  <li>dashboard.svc.js – a service or factory</li>
+  <li>dashboard.ctrl.js – a controller</li>
+  <li>dashboard.flt.js – a filter </li>
+  <li>dashboard.tpl.html – the template</li>
+  <li>dashboard.spec.js – the unit tests</li>
+  <li>dashboard.spec.conf.js – unit tests config</li>
+  <li>dashboard.feature – cucumber specificiation for testing</li>
+</ul>
+
+<h2 id="html-templates-and-logic">HTML Templates and Logic</h2>
+<p>See: http://docs.angularjs.org/guide/templates</p>
+
+<blockquote>
+  <p>An Angular template is the declarative specification that, <br />
+along with information from the model and controller, becomes <br />
+the rendered view that a user sees in the browser. It is the <br />
+static DOM, containing HTML, CSS, and angular-specific elements <br />
+and angular-specific element attributes. The Angular elements <br />
+and attributes direct angular to add behaviour and transform <br />
+the template DOM into the dynamic view DOM.</p>
+</blockquote>
+
+<p>The AngularJS Team</p>
+
+<p>Don’t write HTML in your JavaScript <em>(unless you are building <br />
+a distributable directive where templateUrl won’t function <br />
+correctly, or it’s an abstract state, see routing section)</em>.</p>
+
+<pre><code>$scope.errorMsg = "&lt;strong&gt;Validation failed&lt;/strong&gt;";
+</code></pre>
+
+<p>Don’t use logic in your HTML templates, for example the <br />
+following should not be done:</p>
+
+<pre><code>&lt;div class="alert" ng-show="players &gt; 20"&gt;Too many players&lt;/div&gt;
+</code></pre>
+
+<p>You should declare a property or method on scope and use that <br />
+to drive your HTML conditions.</p>
+
+<p>Using a declarative approach to logic provides a more maintainable <br />
+template. If we used <code>players &gt; 20</code> on multiple HTML elements it <br />
+would create additional overhead if we were to update that <br />
+condition. By encapsulating the logic in a property or method <br />
+it provides both semantically correct mark-up and re-usability.</p>
+
+<h2 id="directives">Directives</h2>
+<p>See: http://docs.angularjs.org/guide/directive</p>
+
+<p>Directives are a way to attach a specified behaviour to a DOM <br />
+element or even to transform an element and its children.</p>
+
+<h3 id="attributes">Attributes</h3>
+<p>When you are decorating an existing element with new<br />
+functionality, directives should be applied as attributes.</p>
+
+<pre><code>&lt;div wiz-mouse-over="move()"&gt;Can't touch this&lt;/div&gt;
+</code></pre>
+
+<p>The directive in the example above calls the defined behaviour<br />
+when a mouse moves over an element. It is generic, reusable and <br />
+does not change the element beyond the bounds of the mouse event.</p>
+
+<p>These directives should be developed in a generic way, with <br />
+minimal understanding of the element content and can be used across <br />
+an application.</p>
+
+<h3 id="elements">Elements</h3>
+<p>When creating self-contained components, you should use the element <br />
+notation. This allows us to describe functionality in templates by <br />
+applying directives as a <strong>domain specific language</strong>.</p>
+
+<pre><code>&lt;wiz-markdown&gt;&lt;/wiz-markdown&gt;
+</code></pre>
+
+<p>Each element is responsible for delivering its described functionality <br />
+and should have ‘replace’ set to true in order to tidy up the html <br />
+after they are compiled.</p>
+
+<p>The parent template is more descriptive and easier to maintain as you <br />
+can simply switch functionality on or off by adding or removing the element.</p>
+
+<p>Element directives should be placed alongside their corresponding feature. </p>
+
+<h2 id="filters">Filters</h2>
+<p>See: http://docs.angularjs.org/guide/filter</p>
+
+<p>Filters should be organised in accordance to their parent features, <br />
+unless they are designed to provide commonly accessible functionality.</p>
+
+<h3 id="performance-of-filters">Performance of filters</h3>
+<p>Angular continuously conducts “dirty-checking”, in essence it is <br />
+looking for changes to values over and over again and raising events <br />
+for $watch and $filter to hook into. If you place a filter on your <br />
+HTML page like so:</p>
+
+<pre><code>&lt;div ng-bind="item.amount | roundDown"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>Don’t be surprise if it starts at some point executing A LOT repeatedly.<br />
+If you place the above code inside a repeater you are essentially <br />
+increasing the filter execution by a factor of the number of items <br />
+within the repeater’s array.</p>
+
+<p>If possible, you should apply filters to your data before binding to your view</p>
+
+<h2 id="services">Services</h2>
+<p>Services are responsible for the business logic in your application.</p>
+
+<p>UI logic, when to disable a button for example, should not be <br />
+carried out in a service.</p>
+
+<p><strong>See the <a href="http://grumpywizards.com/ngTemplate">ngTemplate project</a> for<br />
+further info on where to place your business logic</strong></p>
+
+<h2 id="routers">Routers</h2>
+<p>See: https://github.com/angular-ui/ui-router</p>
+
+<h3 id="angularui-router">AngularUI Router</h3>
+<p>All routing should be conducted using AngularUI Router. AngularUI <br />
+Router is an external plugin used to convert your application into<br />
+a state machine. ngRoute uses the URL to drive navigation. uiRouter <br />
+reverses your app’s relationship with the URL. It uses states to<br />
+navigate and it drives changes to the URL rather than the URL driving <br />
+changes to your app.</p>
+
+<p><a href="https://github.com/angular-ui/ui-router">Please familiarise yourself with the AngularUI <br />
+Router documentation</a></p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	        (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-36978977-3', 'grumpywizards.com');
+	ga('send', 'pageview');
+
+</script>
+</body>
+</html>

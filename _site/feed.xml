@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grumpy Wizards</title>
+    <description>We&#39;re not actually that grumpy, but we are wizards when it comes to code.</description>
+    <link>http://grumpywizards.com/</link>
+    <atom:link href="http://grumpywizards.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>ngMarkdown</title>
+        <description>
+</description>
+        <pubDate>Fri, 23 May 2014 00:00:00 +0100</pubDate>
+        <link>http://grumpywizards.com/ngmarkdown</link>
+        <guid isPermaLink="true">http://grumpywizards.com/ngmarkdown</guid>
+      </item>
+    
+      <item>
+        <title>ngTemplate</title>
+        <description>&lt;h2 id=&quot;guide&quot;&gt;Guide&lt;/h2&gt;
+
+&lt;p&gt;The basics are simple. Each directory has it’s own file with a short description about the type of code that you should put into it. Below is a more detail description of each directory.&lt;/p&gt;
+
+&lt;h3 id=&quot;root&quot;&gt;Root&lt;/h3&gt;
+
+&lt;p&gt;There are 3 directories here; app, css and img. Lets not insult anyone’s intelligence here and skip css and img.&lt;/p&gt;
+
+&lt;h3 id=&quot;app&quot;&gt;App&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt; is the home of all our JavaScript &lt;em&gt;and&lt;/em&gt; HTML. Because each component and feature of our application is self-contained they each own their own HTML templates as you’ll see later. &lt;code&gt;app&lt;/code&gt; is also the home of our good friend &lt;code&gt;app.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;libs&quot;&gt;Libs&lt;/h3&gt;
+
+&lt;p&gt;Next we have &lt;code&gt;libs&lt;/code&gt;. Ok we’re not going in alphabetical order here but it’s logical trust me! &lt;code&gt;libs&lt;/code&gt; is for our external JavaScript libraries, for example we’ll most definately have AngularJS itself, maybe protractor.js for testing and for the example we could throw in JQuery. The idea of this folder is that nothing inside it changes. You drop your libraries in here and use them in your app and that’s it. As soon as you start tinkering with the code in here you harm upgrading any library you have included.&lt;/p&gt;
+
+&lt;h3 id=&quot;models&quot;&gt;Models&lt;/h3&gt;
+
+&lt;p&gt;Don’t think of &lt;code&gt;models&lt;/code&gt; as your usual data structure, or JavaScript representation of a class diagram. These models are plain and simple objects that help you construct your data correctly before sending it to an external service, that’s pretty much it. I’ve found using these sorts of objects really useful. It helps maintain contracts between you and your APIs.&lt;/p&gt;
+
+&lt;h3 id=&quot;apis&quot;&gt;APIs&lt;/h3&gt;
+
+&lt;p&gt;Your application will almost certainly rely on exposed server side APIs. Firebase or Sendgrid for common examples. Build your Angular factories/services and wrap these APIs inside. Then plop them in this directory. It will help you maintain organisation over your external service dependencies.&lt;/p&gt;
+
+&lt;h3 id=&quot;services&quot;&gt;Services&lt;/h3&gt;
+
+&lt;p&gt;Network related dependencies like APIs won’t be the only logic you rely on. Possibly at some point your application will rely on business logic, enums and calculations perhaps. If so wrap their functionality in an Angular services and drop them in here. I usually put objects representing enums into constants on a module and stored them in this directory.&lt;/p&gt;
+
+&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
+
+&lt;p&gt;If you are truely making use of Angular’s abilities you will no doubt be trying to turn everything into a directive. “This header, could it be a directive?”, “This markdown editor, could it be a directive?”, these are the sorts of questions you should be asking whilst you develop your application. If a piece of functionality is self-contained, has the possibility to be re-used and isn’t a defining characteristic of your application then it’s probably a component.&lt;/p&gt;
+
+&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
+
+&lt;p&gt;Features bring your components together and define the characteristics of your application. They also contain your base templates. So as an example a header component would be utilised by the login feature.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 May 2014 00:00:00 +0100</pubDate>
+        <link>http://grumpywizards.com/ngtemplate</link>
+        <guid isPermaLink="true">http://grumpywizards.com/ngtemplate</guid>
+      </item>
+    
+      <item>
+        <title>ngValidation</title>
+        <description>&lt;h2 id=&quot;v110-build-statushttpstravis-ciorggrumpywizardsngvalidationsvgbranchmasterhttpstravis-ciorggrumpywizardsngvalidation&quot;&gt;v1.1.0 &lt;a href=&quot;https://travis-ci.org/GrumpyWizards/ngValidation&quot;&gt;&lt;img src=&quot;https://travis-ci.org/GrumpyWizards/ngValidation.svg?branch=master&quot; alt=&quot;Build Status&quot; /&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;install-it&quot;&gt;Install it&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Grab the &lt;code&gt;wizValidation.min.js&lt;/code&gt; file and drop it into your application&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;&#39;wiz.validation&#39;&lt;/code&gt; as a required module&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;angular.module(&#39;myApp&#39;, [
+  &#39;wiz.validation&#39;
+]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;validators&quot;&gt;Validators&lt;/h2&gt;
+&lt;p&gt;There are currently 15 validators available:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;integer&lt;/li&gt;
+  &lt;li&gt;decimal&lt;/li&gt;
+  &lt;li&gt;starts with&lt;/li&gt;
+  &lt;li&gt;ends with&lt;/li&gt;
+  &lt;li&gt;postcode&lt;/li&gt;
+  &lt;li&gt;zip code&lt;/li&gt;
+  &lt;li&gt;at least one&lt;/li&gt;
+  &lt;li&gt;equal to&lt;/li&gt;
+  &lt;li&gt;not equal to&lt;/li&gt;
+  &lt;li&gt;unique&lt;/li&gt;
+  &lt;li&gt;date of birth&lt;/li&gt;
+  &lt;li&gt;blacklist&lt;/li&gt;
+  &lt;li&gt;whitelist&lt;/li&gt;
+  &lt;li&gt;file&lt;/li&gt;
+  &lt;li&gt;condition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All the validators follow the same pattern of prefixing, as an example for &lt;strong&gt;Zipcode&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the directive is &lt;strong&gt;wiz-val-zipcode&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;the ngClass is &lt;strong&gt;ng-valid-wiz-val-zipcode&lt;/strong&gt; and &lt;strong&gt;ng-invalid-wiz-val-zipcode&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;and the form &lt;code&gt;$error&lt;/code&gt; property is &lt;strong&gt;formName.inputName.$error.wizValZipcode&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-to-use&quot;&gt;How to use&lt;/h2&gt;
+&lt;p&gt;To use the validators simply add &lt;code&gt;wiz-val-[validator-name]&lt;/code&gt; as an attribute to HTML inputs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;number&quot;
+       step=&quot;.5&quot;
+       name=&quot;decimal&quot;
+       ng-model=&quot;demo.decimal&quot;
+       wiz-val-decimal
+       ng-class=&quot;{invalid: demoForm.decimal.$error.wizValDecimal}&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The validators don’t check required logic, that is done by standard HTML validation.&lt;/p&gt;
+
+&lt;h2 id=&quot;at-least-one-and-equal-to&quot;&gt;At least one and Equal to&lt;/h2&gt;
+&lt;p&gt;Both of these validators have an extra option. Add the directive &lt;code&gt;wiz-val-at-least-one&lt;/code&gt; or &lt;code&gt;wiz-val-equal-to&lt;/code&gt; to each input you want to validate as a group. E.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.email&quot; wiz-val-equal-to /&amp;gt;
+&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.confirmEmail&quot; wiz-val-equal-to /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However if you want more than one grouping specify the group name like this: &lt;code&gt;wiz-val-at-least-one=&quot;myGroup&quot;&lt;/code&gt; e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.email&quot; wiz-val-equal-to=&quot;firstSet&quot; /&amp;gt;
+&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.confirmEmail&quot; wiz-val-equal-to=&quot;firstSet&quot; /&amp;gt;
+
+&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.email&quot; wiz-val-equal-to=&quot;secondSet&quot; /&amp;gt;
+&amp;lt;input type=&quot;text&quot; ng-model=&quot;user.confirmEmail&quot; wiz-val-equal-to=&quot;secondSet&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;equal-to-not-equal-to-and-unique&quot;&gt;Equal to, Not equal to and Unique&lt;/h2&gt;
+&lt;p&gt;These three validators are rather similar in nature however they behave differently, please choose wisely:&lt;/p&gt;
+
+&lt;h3 id=&quot;equal-to&quot;&gt;Equal to&lt;/h3&gt;
+&lt;p&gt;All the fields within the group must be the same.&lt;/p&gt;
+
+&lt;h3 id=&quot;not-equal-to&quot;&gt;Not equal to&lt;/h3&gt;
+&lt;p&gt;At least one field within the group must be different.&lt;/p&gt;
+
+&lt;h3 id=&quot;unique&quot;&gt;Unique&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; field within the group must be different from the rest.&lt;/p&gt;
+
+&lt;h2 id=&quot;date-of-birth&quot;&gt;Date of birth&lt;/h2&gt;
+&lt;p&gt;The date of birth validator works by calculating the latest date you can enter given the minimum age supplied to the directive:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;date&quot; name&quot;dateOfBirth&quot; wiz-val-date-of-birth=&quot;18&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above example your date of birth must be 18 or more years ago.&lt;/p&gt;
+
+&lt;h2 id=&quot;blacklist-and-whitelist&quot;&gt;Blacklist and Whitelist&lt;/h2&gt;
+&lt;p&gt;The values in a blacklist validated field must not equal any of the values provided to the validator. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;text&quot; name=&quot;blacklist&quot; wiz-val-blacklist=&quot;[&#39;red&#39;, &#39;orange&#39;, &#39;yellow&#39;]&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you enter “red”, “orange” or “yellow” into this input the field will be invalid.&lt;/p&gt;
+
+&lt;p&gt;Conversely if you are using the whitelist validator you must use one of the values in the array, anything else would be invalid.&lt;/p&gt;
+
+&lt;h2 id=&quot;file&quot;&gt;File&lt;/h2&gt;
+&lt;p&gt;The file validation field has 3 features that are used in conjunction with the &lt;code&gt;wiz-val-file&lt;/code&gt; attribute directive:&lt;/p&gt;
+
+&lt;h3 id=&quot;file-type&quot;&gt;File type&lt;/h3&gt;
+&lt;p&gt;File types are specified by adding &lt;code&gt;wiz-val-file-type&lt;/code&gt; to the HTML element and providing it an array of acceptable MIME types. For example to check for jpeg and gif files use &lt;code&gt;wiz-val-file-types=&quot;[&#39;image/jpeg&#39;,&#39;image/gif&#39;]&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;lt;input type=&quot;file&quot; name=&quot;file&quot; wiz-val-file wiz-val-file-types=&quot;[&#39;image/jpeg&#39;,&#39;image/gif&#39;]&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;file-size&quot;&gt;File size&lt;/h3&gt;
+&lt;p&gt;To specify the maximum file size in bytes add the file size attribute e.g. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;lt;input type=&quot;file&quot; name=&quot;file&quot; wiz-val-file  wiz-val-file-size=&quot;1000000&quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;file-number&quot;&gt;File number&lt;/h3&gt;
+&lt;p&gt;When a file input field is set to “multiple” it is possible to upload multiple files. To specify the maximum number of files allowed add the file number attribute e.g. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;lt;input type=&quot;file&quot; name=&quot;file&quot; multiple wiz-val-file  wiz-val-file-number=&quot;2&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;condition&quot;&gt;Condition&lt;/h2&gt;
+&lt;p&gt;Provide this validator with an array of conditions. It will use these to determine whether or not the field is valid e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&quot;text&quot;
+       name=&quot;conditions&quot;
+       ng-model=&quot;demo.conditions&quot;
+       wiz-val-conditions=&quot;[today.getDate() == 24,
+                            demoForm.integer.$valid,
+                            demo.conditions == &#39;hello world&#39;]&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
+&lt;p&gt;Feel free to contribute. That’s it.&lt;/p&gt;
+
+&lt;h2 id=&quot;licence&quot;&gt;Licence&lt;/h2&gt;
+
+&lt;p&gt;ngValidation is covered by the MIT Licence&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2014 Grumpy Wizards&lt;/p&gt;
+
+&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&lt;/p&gt;
+
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&lt;/p&gt;
+
+&lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 May 2014 00:00:00 +0100</pubDate>
+        <link>http://grumpywizards.com/ngvalidation</link>
+        <guid isPermaLink="true">http://grumpywizards.com/ngvalidation</guid>
+      </item>
+    
+      <item>
+        <title>Angular</title>
+        <description>&lt;h2 id=&quot;feature-driven-development&quot;&gt;Feature Driven Development&lt;/h2&gt;
+&lt;p&gt;See: http://www.johnpapa.net/angular-growth-structure/&lt;/p&gt;
+
+&lt;p&gt;Feature driven development is more about how you organise and structure your application than how you code the functionality. Rather than produce 1 large complicated app you create discreet pieces and couple them together. &lt;/p&gt;
+
+&lt;h3 id=&quot;by-type---no&quot;&gt;By type - No&lt;/h3&gt;
+&lt;p&gt;Files organised by type means having your controllers, services, &lt;br /&gt;
+filters, directives, views etc. placed in their respective folders. &lt;br /&gt;
+Nothing is discrete, development and testing is done in large &lt;br /&gt;
+blocks. Large applications quickly become overly complex.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|
+|- controllers
+|--- controllers.mod.js
+|--- home.ctrl.js
+|--- about.ctrl.js
+|--- contact.ctrl.js
+|--- login.ctrl.js
+|- services
+|--- auth.svc.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;by-feature---yes&quot;&gt;By Feature - Yes&lt;/h3&gt;
+&lt;p&gt;The application is organised by the self-contained features that it&lt;br /&gt;
+requires. Each feature can be plugged into or out of the application&lt;br /&gt;
+with relative ease. It is not baked directly into the application’s&lt;br /&gt;
+foundations. Both development and testing is conducted within the&lt;br /&gt;
+scope of each feature.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|
+|- home
+|--- home.mod.js
+|--- home.ctrl.js
+|- about
+|--- about.mod.js
+|--- about.ctrl.js
+|- contact
+|--- contact.mod.js
+|--- contact.ctrl.js
+|- login
+|--- login.mod.js
+|--- login.ctrl.js
+|--- auth.svc.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; &lt;br /&gt;
+for an example of how to organise your application and what each &lt;br /&gt;
+directory is used for.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;module-declaration&quot;&gt;Module Declaration&lt;/h2&gt;
+&lt;p&gt;Modules should be declared using the global &lt;code&gt;angular&lt;/code&gt; variable like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// app module
+angular.module(&#39;demo&#39;, [
+               &#39;demo.features.login&#39;
+]);
+
+// sub-module
+angular.module(&#39;demo.features.login&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No additional globabl variables are required&lt;/li&gt;
+  &lt;li&gt;You can access your modules from everywhere &lt;/li&gt;
+  &lt;li&gt;Modules can be placed into different files&lt;/li&gt;
+  &lt;li&gt;You can use the function-form of &lt;code&gt;use strict&lt;/code&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dependency-injection&quot;&gt;Dependency Injection&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/dev_guide.services.managing_dependencies&lt;/p&gt;
+
+&lt;p&gt;There are two types of dependencies you can include in your modules &lt;br /&gt;
+and controllers. The first is listing your required modules and the&lt;br /&gt;
+second is injecting services into your controllers.&lt;/p&gt;
+
+&lt;h3 id=&quot;requiring-modules&quot;&gt;Requiring modules&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;angular.module(&#39;demo&#39;, [
+               &#39;demo.features.login
+])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a fairly standard process of how we require modules in AngularJS. &lt;br /&gt;
+Naming conventions are covered in the next section but you can see here &lt;br /&gt;
+that required modules should be grouped by feature.&lt;/p&gt;
+
+&lt;h3 id=&quot;injecting-dependencies&quot;&gt;Injecting dependencies&lt;/h3&gt;
+
+&lt;p&gt;Should be done explicity to prevent errors during minification and disjointed&lt;br /&gt;
+dependencies within your code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.controller(&#39;homeCtrl&#39;, [&#39;$scope&#39;, &#39;$state&#39;, function ($scope, $state) { }])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;naming-conventions&quot;&gt;Naming Conventions&lt;/h2&gt;
+&lt;p&gt;It is important to provide distinct names to components of your &lt;br /&gt;
+application. This mitigates the possibility that the angular source,&lt;br /&gt;
+3rd party libraries and shared components will have clashing module &lt;br /&gt;
+names, giving unexpected results.&lt;/p&gt;
+
+&lt;h3 id=&quot;prefixing&quot;&gt;Prefixing&lt;/h3&gt;
+&lt;p&gt;All components (directives, controllers, services) must be&lt;br /&gt;
+prefixed with an identifier that is relevant to their scope:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if shared across all applications use a company prefix: ‘wiz’ for Grumpy&lt;br /&gt;
+Wizards for example.&lt;/li&gt;
+  &lt;li&gt;if exclusive to an application use an application prefix: ‘todo’ if&lt;br /&gt;
+Grumpy Wizards built a todo list app for example.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controllers do not need to be prefixed&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;postfixing&quot;&gt;Postfixing&lt;/h3&gt;
+&lt;p&gt;The following component types should be postfixed as per the examples below:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Controllers: MarkdownCtrl&lt;/li&gt;
+  &lt;li&gt;Services: wizMarkdownSvc&lt;/li&gt;
+  &lt;li&gt;Filters: wizMarkdownFltr&lt;/li&gt;
+  &lt;li&gt;Directives: do not require postfixing wizMarkdown &amp;gt; becomes &lt;code&gt;wiz-markdown&lt;/code&gt; in markup.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;capitalisation&quot;&gt;Capitalisation&lt;/h3&gt;
+&lt;p&gt;Controllers are considered classes and as such they should have a leading&lt;br /&gt;
+capital letter: MarkdownCtrl, all other components should start with lower&lt;br /&gt;
+case e.g. wizMarkdown.&lt;/p&gt;
+
+&lt;h3 id=&quot;modules&quot;&gt;Modules&lt;/h3&gt;
+&lt;p&gt;Module namespacing format should following this pattern:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;application&amp;gt;.&amp;lt;[api,component,feature,service]&amp;gt;.&amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Examples:&lt;br /&gt;
+- wiz.service.addNumbers&lt;br /&gt;
+- todo.component.markdown&lt;br /&gt;
+- reader.todo.api.email&lt;br /&gt;
+- users.feature.about&lt;/p&gt;
+
+&lt;h3 id=&quot;filenames&quot;&gt;Filenames&lt;/h3&gt;
+&lt;p&gt;To aid readability in the solution the type of component should be &lt;br /&gt;
+appended to each file name, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dashboard.mod.js  - the module declaration&lt;/li&gt;
+  &lt;li&gt;dashboard.dir.js – a directive&lt;/li&gt;
+  &lt;li&gt;dashboard.svc.js – a service or factory&lt;/li&gt;
+  &lt;li&gt;dashboard.ctrl.js – a controller&lt;/li&gt;
+  &lt;li&gt;dashboard.flt.js – a filter &lt;/li&gt;
+  &lt;li&gt;dashboard.tpl.html – the template&lt;/li&gt;
+  &lt;li&gt;dashboard.spec.js – the unit tests&lt;/li&gt;
+  &lt;li&gt;dashboard.spec.conf.js – unit tests config&lt;/li&gt;
+  &lt;li&gt;dashboard.feature – cucumber specificiation for testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;html-templates-and-logic&quot;&gt;HTML Templates and Logic&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/templates&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An Angular template is the declarative specification that, &lt;br /&gt;
+along with information from the model and controller, becomes &lt;br /&gt;
+the rendered view that a user sees in the browser. It is the &lt;br /&gt;
+static DOM, containing HTML, CSS, and angular-specific elements &lt;br /&gt;
+and angular-specific element attributes. The Angular elements &lt;br /&gt;
+and attributes direct angular to add behaviour and transform &lt;br /&gt;
+the template DOM into the dynamic view DOM.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The AngularJS Team&lt;/p&gt;
+
+&lt;p&gt;Don’t write HTML in your JavaScript &lt;em&gt;(unless you are building &lt;br /&gt;
+a distributable directive where templateUrl won’t function &lt;br /&gt;
+correctly, or it’s an abstract state, see routing section)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$scope.errorMsg = &quot;&amp;lt;strong&amp;gt;Validation failed&amp;lt;/strong&amp;gt;&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don’t use logic in your HTML templates, for example the &lt;br /&gt;
+following should not be done:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;alert&quot; ng-show=&quot;players &amp;gt; 20&quot;&amp;gt;Too many players&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You should declare a property or method on scope and use that &lt;br /&gt;
+to drive your HTML conditions.&lt;/p&gt;
+
+&lt;p&gt;Using a declarative approach to logic provides a more maintainable &lt;br /&gt;
+template. If we used &lt;code&gt;players &amp;gt; 20&lt;/code&gt; on multiple HTML elements it &lt;br /&gt;
+would create additional overhead if we were to update that &lt;br /&gt;
+condition. By encapsulating the logic in a property or method &lt;br /&gt;
+it provides both semantically correct mark-up and re-usability.&lt;/p&gt;
+
+&lt;h2 id=&quot;directives&quot;&gt;Directives&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/directive&lt;/p&gt;
+
+&lt;p&gt;Directives are a way to attach a specified behaviour to a DOM &lt;br /&gt;
+element or even to transform an element and its children.&lt;/p&gt;
+
+&lt;h3 id=&quot;attributes&quot;&gt;Attributes&lt;/h3&gt;
+&lt;p&gt;When you are decorating an existing element with new&lt;br /&gt;
+functionality, directives should be applied as attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div wiz-mouse-over=&quot;move()&quot;&amp;gt;Can&#39;t touch this&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The directive in the example above calls the defined behaviour&lt;br /&gt;
+when a mouse moves over an element. It is generic, reusable and &lt;br /&gt;
+does not change the element beyond the bounds of the mouse event.&lt;/p&gt;
+
+&lt;p&gt;These directives should be developed in a generic way, with &lt;br /&gt;
+minimal understanding of the element content and can be used across &lt;br /&gt;
+an application.&lt;/p&gt;
+
+&lt;h3 id=&quot;elements&quot;&gt;Elements&lt;/h3&gt;
+&lt;p&gt;When creating self-contained components, you should use the element &lt;br /&gt;
+notation. This allows us to describe functionality in templates by &lt;br /&gt;
+applying directives as a &lt;strong&gt;domain specific language&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;wiz-markdown&amp;gt;&amp;lt;/wiz-markdown&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each element is responsible for delivering its described functionality &lt;br /&gt;
+and should have ‘replace’ set to true in order to tidy up the html &lt;br /&gt;
+after they are compiled.&lt;/p&gt;
+
+&lt;p&gt;The parent template is more descriptive and easier to maintain as you &lt;br /&gt;
+can simply switch functionality on or off by adding or removing the element.&lt;/p&gt;
+
+&lt;p&gt;Element directives should be placed alongside their corresponding feature. &lt;/p&gt;
+
+&lt;h2 id=&quot;filters&quot;&gt;Filters&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/filter&lt;/p&gt;
+
+&lt;p&gt;Filters should be organised in accordance to their parent features, &lt;br /&gt;
+unless they are designed to provide commonly accessible functionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;performance-of-filters&quot;&gt;Performance of filters&lt;/h3&gt;
+&lt;p&gt;Angular continuously conducts “dirty-checking”, in essence it is &lt;br /&gt;
+looking for changes to values over and over again and raising events &lt;br /&gt;
+for $watch and $filter to hook into. If you place a filter on your &lt;br /&gt;
+HTML page like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div ng-bind=&quot;item.amount | roundDown&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don’t be surprise if it starts at some point executing A LOT repeatedly.&lt;br /&gt;
+If you place the above code inside a repeater you are essentially &lt;br /&gt;
+increasing the filter execution by a factor of the number of items &lt;br /&gt;
+within the repeater’s array.&lt;/p&gt;
+
+&lt;p&gt;If possible, you should apply filters to your data before binding to your view&lt;/p&gt;
+
+&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
+&lt;p&gt;Services are responsible for the business logic in your application.&lt;/p&gt;
+
+&lt;p&gt;UI logic, when to disable a button for example, should not be &lt;br /&gt;
+carried out in a service.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; for&lt;br /&gt;
+further info on where to place your business logic&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;routers&quot;&gt;Routers&lt;/h2&gt;
+&lt;p&gt;See: https://github.com/angular-ui/ui-router&lt;/p&gt;
+
+&lt;h3 id=&quot;angularui-router&quot;&gt;AngularUI Router&lt;/h3&gt;
+&lt;p&gt;All routing should be conducted using AngularUI Router. AngularUI &lt;br /&gt;
+Router is an external plugin used to convert your application into&lt;br /&gt;
+a state machine. ngRoute uses the URL to drive navigation. uiRouter &lt;br /&gt;
+reverses your app’s relationship with the URL. It uses states to&lt;br /&gt;
+navigate and it drives changes to the URL rather than the URL driving &lt;br /&gt;
+changes to your app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/angular-ui/ui-router&quot;&gt;Please familiarise yourself with the AngularUI &lt;br /&gt;
+Router documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 May 2014 00:00:00 +0100</pubDate>
+        <link>http://grumpywizards.com/angular</link>
+        <guid isPermaLink="true">http://grumpywizards.com/angular</guid>
+      </item>
+    
+      <item>
+        <title>Grid</title>
+        <description>&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#basic-grid&quot;&gt;Basic grid&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nesting&quot;&gt;Nesting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#widths&quot;&gt;Widths&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#offsets&quot;&gt;Offsets&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#wrapping&quot;&gt;Wrapping&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#vertical-alignment&quot;&gt;Vertical alignment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#responsiveness&quot;&gt;Responsiveness&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#utility-classes&quot;&gt;Utility classes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#credits&quot;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-to-use&quot;&gt;How to use&lt;/h2&gt;
+
+&lt;h2 id=&quot;basic-grid&quot;&gt;Basic grid&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;.grid {
+  display: flex;
+}
+.cell {
+  flex: 1;
+  box-sizing: border-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;third&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will create a simple flexible row of cells.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-------------------------------------
+| first    | second     | third     |
+-------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;nesting&quot;&gt;Nesting&lt;/h2&gt;
+
+&lt;p&gt;You can nest grids inside cells with relative ease…&lt;/p&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;
+    &amp;lt;div class=&quot;grid&quot;&amp;gt;
+      &amp;lt;div class=&quot;cell&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+      &amp;lt;div class=&quot;cell&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;grid&quot;&amp;gt;
+      &amp;lt;div class=&quot;cell&quot;&amp;gt;third&amp;lt;/div&amp;gt;
+      &amp;lt;div class=&quot;cell&quot;&amp;gt;fourth&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;fifth&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Little complicated to explain. This is what it should produce:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-------------------------------------
+| first      | second     | fifth   |
+--------------------------|         |
+| third      | fourth     |         |
+-------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;widths&quot;&gt;Widths&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;.cell-width-20 {
+  flex: 0 0 20%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-20&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;third&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example the first cell is 20% the width of the grid, the other two share the remaining space equally.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-------------------------------------
+| first        | second   | third   |
+-------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;offsets&quot;&gt;Offsets&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;.cell-offset-20 {
+  margin-left: 20%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-10&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-10 cell-offset-80&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adding &lt;code&gt;cell-offset-80&lt;/code&gt; will add a &lt;code&gt;margin-left: 80%&lt;/code&gt; to the cell, pushing it right.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---------                  ----------
+| first |                  | second |
+---------                  ----------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;wrapping&quot;&gt;Wrapping&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;.grid-wrap {
+  flex-wrap: wrap;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example-4&quot;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;Here we have 2 cells, 50% and 66.6666% wide, but the grid is only 100% wide…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-50&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-66&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this means the cells are now in control and have broken out of their confinment!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid grid-wrap&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-50&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell cell-width-66&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adding &lt;code&gt;grid-wrap&lt;/code&gt; will push the second cell down under the first cell.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-------------------
+| first           |
+-------------------
+-----------------------
+| second              |
+-----------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Why not just make this default behaviour?&lt;/strong&gt; Leaving this option to the developer provides more flexibility.&lt;/p&gt;
+
+&lt;h2 id=&quot;vertical-alignment&quot;&gt;Vertical alignment&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;/* All cells */
+.grid-top {
+  align-items: flex-start;
+}
+.grid-center {
+  align-items: center;
+}
+.grid-bottom {
+  align-items: flex-end;
+}
+
+/* Individual cells */
+.cell-top {
+  align-self: flex-start;
+}
+.cell-center {
+  align-self: center;
+}
+.cell-bottom {
+  align-self: flex-end;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example-5&quot;&gt;Example&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid grid-bottom&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-top&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell cell-center&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;third&amp;lt;/div&amp;gt; &amp;lt;!-- grid-bottom pushes this to the bottom --&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice there are two vertical aligment rules being applied to this grid. A grid wide rule of &lt;code&gt;grid-bottom&lt;/code&gt; that pushes everything to the bottom, and per cell alignment rules of &lt;code&gt;cell-top&lt;/code&gt; and &lt;code&gt;cell-center&lt;/code&gt; that vertically align the cells to the top and center of the grid respectively.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;------------                        -------------
+| first    |                        | fourth    |
+------------                        |           |
+                                    | fourth    |
+            -------------           |           |
+            | second    |           | fourth    |
+            -------------           |           |
+                                    | fourth    |
+                        -------------           |
+                        | third     | fourth    |
+                        -------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;responsiveness&quot;&gt;Responsiveness&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;@media (min-width: 24em) and (max-width: 48em) {
+  .grid-medium-fit &amp;gt; .cell:not([class*=&quot;cell-width&quot;]) {
+    flex: 1;
+  }
+  .grid-medium-full {
+    flex-wrap: wrap;
+  }
+  .grid-medium-full &amp;gt; .cell {
+    flex: 0 0 100%;
+    margin-left: 0;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;example-6&quot;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;Let’s make this grid thing respond to different screen sizes…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;grid grid-small-full grid-medium-fit grid-large-full&quot;&amp;gt;
+  &amp;lt;div class=&quot;cell cell-top&quot;&amp;gt;first&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell cell-center&quot;&amp;gt;second&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;third&amp;lt;/div&amp;gt; &amp;lt;!-- grid-bottom pushes this to bottom --&amp;gt;
+  &amp;lt;div class=&quot;cell&quot;&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;fourth
+    &amp;lt;br&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;.grid-small-full&lt;/code&gt; this rule makes the cells full width but only when the screen is small&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.grid-medium-fit&lt;/code&gt; makes the cells share the space, but only for medium screens&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;.grid-large-full&lt;/code&gt; turns it all into columns again&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;utility-classes&quot;&gt;Utility classes&lt;/h2&gt;
+
+&lt;p&gt;There are some handy “make visible when small” and “hide when large” rules for you to play with.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.visible-small {
+  display: none;
+}
+.hidden-medium {
+  display: none;
+}
+.hidden-large {
+  display: none;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
+&lt;p&gt;http://philipwalton.github.io/solved-by-flexbox/demos/grids/&lt;/p&gt;
+
+&lt;p&gt;http://ionicframework.com/docs/components/#grid&lt;/p&gt;
+
+&lt;p&gt;http://getbootstrap.com/css/#grid&lt;/p&gt;
+
+&lt;p&gt;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&lt;/p&gt;
+
+&lt;h3 id=&quot;licence&quot;&gt;Licence&lt;/h3&gt;
+
+&lt;p&gt;Grid is covered by the MIT Licence&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2014 Grumpy Wizards&lt;/p&gt;
+
+&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of&lt;br /&gt;
+this software and associated documentation files (the “Software”), to deal in&lt;br /&gt;
+the Software without restriction, including without limitation the rights to&lt;br /&gt;
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of&lt;br /&gt;
+the Software, and to permit persons to whom the Software is furnished to do so,&lt;br /&gt;
+subject to the following conditions:&lt;/p&gt;
+
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all&lt;br /&gt;
+copies or substantial portions of the Software.&lt;/p&gt;
+
+&lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&lt;br /&gt;
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS&lt;br /&gt;
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR&lt;br /&gt;
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER&lt;br /&gt;
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN&lt;br /&gt;
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 19 May 2014 00:00:00 +0100</pubDate>
+        <link>http://grumpywizards.com/grid</link>
+        <guid isPermaLink="true">http://grumpywizards.com/grid</guid>
+      </item>
+    
+  </channel>
+</rss>

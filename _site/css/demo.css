@@ -1,0 +1,16 @@
+.demo {
+	text-align: center;
+}
+
+.demo .grid {
+	box-shadow: 0 0 5px -1px #3cf;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.demo .cell {
+	background-color: #fcfeff;
+	box-shadow: 0 0 5px -1px #dd3a82;
+	border-radius: 6px;
+	padding: 10px 0;
+}

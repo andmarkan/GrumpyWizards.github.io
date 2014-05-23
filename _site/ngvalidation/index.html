@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+	<meta charset="utf-8">
+	<title>ngValidation | Grumpy Wizards</title>
+	<meta name="copyright" content="Grumpy Wizards 2014">
+	<meta name="description" content="We're not actually that grumpy, but we are wizards when it comes to code." />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/normalize.min.css">
+	<link rel="stylesheet" href="/css/grid.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+
+</head>
+</head>
+<body>
+    <header class="project-header grid grid-center">
+    <div class="cell cell-width-90 cell-offset-5">
+        <a href="/">
+            <img class="project-logo" src="/img/gw.png" alt="G"></a>
+        <h1 class="project-title">ngValidation</h1>
+        <div class="project-description">AngularJS easier form validation</div>
+    </div>
+</header>
+
+    <div class="content animated fadeInUp">
+        <section class="section container">
+    <div class="grid grid-medium-full">
+        <div class="section-body cell">
+            How many times have you written the same validation over and over again? Form validation has always been a bit of chore to do and a pain to get right. AngularJS has made form validation easier to build, but until now a comprehensive library of pre-set validators was missing.
+			<p>
+                <a href="https://github.com/GrumpyWizards/ngValidation" class="btn">View project on Github</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+        <hr />
+        <section class="section container">
+            <div class="grid grid-medium-full">
+                <div class="section-body cell">
+                    <h2 id="v110-build-statushttpstravis-ciorggrumpywizardsngvalidationsvgbranchmasterhttpstravis-ciorggrumpywizardsngvalidation">v1.1.0 <a href="https://travis-ci.org/GrumpyWizards/ngValidation"><img src="https://travis-ci.org/GrumpyWizards/ngValidation.svg?branch=master" alt="Build Status" /></a></h2>
+
+<h2 id="install-it">Install it</h2>
+<ol>
+  <li>Grab the <code>wizValidation.min.js</code> file and drop it into your application</li>
+  <li>Add <code>'wiz.validation'</code> as a required module</li>
+</ol>
+
+<p>Example:</p>
+
+<pre><code>angular.module('myApp', [
+  'wiz.validation'
+]);
+</code></pre>
+
+<h2 id="validators">Validators</h2>
+<p>There are currently 15 validators available:</p>
+
+<ul>
+  <li>integer</li>
+  <li>decimal</li>
+  <li>starts with</li>
+  <li>ends with</li>
+  <li>postcode</li>
+  <li>zip code</li>
+  <li>at least one</li>
+  <li>equal to</li>
+  <li>not equal to</li>
+  <li>unique</li>
+  <li>date of birth</li>
+  <li>blacklist</li>
+  <li>whitelist</li>
+  <li>file</li>
+  <li>condition</li>
+</ul>
+
+<p>All the validators follow the same pattern of prefixing, as an example for <strong>Zipcode</strong>:</p>
+
+<ul>
+  <li>the directive is <strong>wiz-val-zipcode</strong></li>
+  <li>the ngClass is <strong>ng-valid-wiz-val-zipcode</strong> and <strong>ng-invalid-wiz-val-zipcode</strong></li>
+  <li>and the form <code>$error</code> property is <strong>formName.inputName.$error.wizValZipcode</strong></li>
+</ul>
+
+<h2 id="how-to-use">How to use</h2>
+<p>To use the validators simply add <code>wiz-val-[validator-name]</code> as an attribute to HTML inputs:</p>
+
+<pre><code>&lt;input type="number"
+       step=".5"
+       name="decimal"
+       ng-model="demo.decimal"
+       wiz-val-decimal
+       ng-class="{invalid: demoForm.decimal.$error.wizValDecimal}" /&gt;
+</code></pre>
+
+<p>The validators don’t check required logic, that is done by standard HTML validation.</p>
+
+<h2 id="at-least-one-and-equal-to">At least one and Equal to</h2>
+<p>Both of these validators have an extra option. Add the directive <code>wiz-val-at-least-one</code> or <code>wiz-val-equal-to</code> to each input you want to validate as a group. E.g.</p>
+
+<pre><code>&lt;input type="text" ng-model="user.email" wiz-val-equal-to /&gt;
+&lt;input type="text" ng-model="user.confirmEmail" wiz-val-equal-to /&gt;
+</code></pre>
+
+<p>However if you want more than one grouping specify the group name like this: <code>wiz-val-at-least-one="myGroup"</code> e.g.</p>
+
+<pre><code>&lt;input type="text" ng-model="user.email" wiz-val-equal-to="firstSet" /&gt;
+&lt;input type="text" ng-model="user.confirmEmail" wiz-val-equal-to="firstSet" /&gt;
+
+&lt;input type="text" ng-model="user.email" wiz-val-equal-to="secondSet" /&gt;
+&lt;input type="text" ng-model="user.confirmEmail" wiz-val-equal-to="secondSet" /&gt;
+</code></pre>
+
+<h2 id="equal-to-not-equal-to-and-unique">Equal to, Not equal to and Unique</h2>
+<p>These three validators are rather similar in nature however they behave differently, please choose wisely:</p>
+
+<h3 id="equal-to">Equal to</h3>
+<p>All the fields within the group must be the same.</p>
+
+<h3 id="not-equal-to">Not equal to</h3>
+<p>At least one field within the group must be different.</p>
+
+<h3 id="unique">Unique</h3>
+<p><em>Every</em> field within the group must be different from the rest.</p>
+
+<h2 id="date-of-birth">Date of birth</h2>
+<p>The date of birth validator works by calculating the latest date you can enter given the minimum age supplied to the directive:</p>
+
+<pre><code>&lt;input type="date" name"dateOfBirth" wiz-val-date-of-birth="18" /&gt;
+</code></pre>
+
+<p>In the above example your date of birth must be 18 or more years ago.</p>
+
+<h2 id="blacklist-and-whitelist">Blacklist and Whitelist</h2>
+<p>The values in a blacklist validated field must not equal any of the values provided to the validator. e.g.</p>
+
+<pre><code>&lt;input type="text" name="blacklist" wiz-val-blacklist="['red', 'orange', 'yellow']" /&gt;
+</code></pre>
+
+<p>If you enter “red”, “orange” or “yellow” into this input the field will be invalid.</p>
+
+<p>Conversely if you are using the whitelist validator you must use one of the values in the array, anything else would be invalid.</p>
+
+<h2 id="file">File</h2>
+<p>The file validation field has 3 features that are used in conjunction with the <code>wiz-val-file</code> attribute directive:</p>
+
+<h3 id="file-type">File type</h3>
+<p>File types are specified by adding <code>wiz-val-file-type</code> to the HTML element and providing it an array of acceptable MIME types. For example to check for jpeg and gif files use <code>wiz-val-file-types="['image/jpeg','image/gif']"</code></p>
+
+<pre><code>  &lt;input type="file" name="file" wiz-val-file wiz-val-file-types="['image/jpeg','image/gif']" /&gt;
+</code></pre>
+
+<h3 id="file-size">File size</h3>
+<p>To specify the maximum file size in bytes add the file size attribute e.g. </p>
+
+<pre><code>  &lt;input type="file" name="file" wiz-val-file  wiz-val-file-size="1000000"/&gt;
+</code></pre>
+
+<h3 id="file-number">File number</h3>
+<p>When a file input field is set to “multiple” it is possible to upload multiple files. To specify the maximum number of files allowed add the file number attribute e.g. </p>
+
+<pre><code>  &lt;input type="file" name="file" multiple wiz-val-file  wiz-val-file-number="2"&gt;
+</code></pre>
+
+<h2 id="condition">Condition</h2>
+<p>Provide this validator with an array of conditions. It will use these to determine whether or not the field is valid e.g.</p>
+
+<pre><code>&lt;input type="text"
+       name="conditions"
+       ng-model="demo.conditions"
+       wiz-val-conditions="[today.getDate() == 24,
+                            demoForm.integer.$valid,
+                            demo.conditions == 'hello world']" /&gt;
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+<p>Feel free to contribute. That’s it.</p>
+
+<h2 id="licence">Licence</h2>
+
+<p>ngValidation is covered by the MIT Licence</p>
+
+<p>Copyright (c) 2014 Grumpy Wizards</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	        (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-36978977-3', 'grumpywizards.com');
+	ga('send', 'pageview');
+
+</script>
+</body>
+</html>

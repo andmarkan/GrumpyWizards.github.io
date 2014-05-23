@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+	<meta charset="utf-8">
+	<title>Grid | Grumpy Wizards</title>
+	<meta name="copyright" content="Grumpy Wizards 2014">
+	<meta name="description" content="We're not actually that grumpy, but we are wizards when it comes to code." />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/normalize.min.css">
+	<link rel="stylesheet" href="/css/grid.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+
+</head>
+</head>
+<body>
+    <header class="project-header grid grid-center">
+    <div class="cell cell-width-90 cell-offset-5">
+        <a href="/">
+            <img class="project-logo" src="/img/gw.png" alt="G"></a>
+        <h1 class="project-title">Grid</h1>
+        <div class="project-description">Simple CSS grid for flexible layouts</div>
+    </div>
+</header>
+
+    <div class="content animated fadeInUp">
+        <section class="section container">
+    <div class="grid grid-medium-full">
+        <div class="section-body cell">
+            Uses flexbox to produce flexible easy to use classes for rows and columns. There are 2 versions of Grid. A modern version and one with -prefixes- for better browser support.
+			<p>
+                <a href="https://github.com/GrumpyWizards/Grid" class="btn">View project on Github</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+        <hr />
+        <section class="section container">
+            <div class="grid grid-medium-full">
+                <div class="section-body cell">
+                    <h2 id="contents">Contents</h2>
+<ol>
+  <li><a href="#basic-grid">Basic grid</a></li>
+  <li><a href="#nesting">Nesting</a></li>
+  <li><a href="#widths">Widths</a></li>
+  <li><a href="#offsets">Offsets</a></li>
+  <li><a href="#wrapping">Wrapping</a></li>
+  <li><a href="#vertical-alignment">Vertical alignment</a></li>
+  <li><a href="#responsiveness">Responsiveness</a></li>
+  <li><a href="#utility-classes">Utility classes</a></li>
+  <li><a href="#credits">Credits</a></li>
+</ol>
+
+<h2 id="how-to-use">How to use</h2>
+
+<h2 id="basic-grid">Basic grid</h2>
+
+<pre><code>.grid {
+  display: flex;
+}
+.cell {
+  flex: 1;
+  box-sizing: border-box;
+}
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="cell"&gt;first&lt;/div&gt;
+  &lt;div class="cell"&gt;second&lt;/div&gt;
+  &lt;div class="cell"&gt;third&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>This will create a simple flexible row of cells.</p>
+
+<pre><code>-------------------------------------
+| first    | second     | third     |
+-------------------------------------
+</code></pre>
+
+<h2 id="nesting">Nesting</h2>
+
+<p>You can nest grids inside cells with relative ease…</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="cell"&gt;
+    &lt;div class="grid"&gt;
+      &lt;div class="cell"&gt;first&lt;/div&gt;
+      &lt;div class="cell"&gt;second&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="grid"&gt;
+      &lt;div class="cell"&gt;third&lt;/div&gt;
+      &lt;div class="cell"&gt;fourth&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="cell"&gt;fifth&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Little complicated to explain. This is what it should produce:</p>
+
+<pre><code>-------------------------------------
+| first      | second     | fifth   |
+--------------------------|         |
+| third      | fourth     |         |
+-------------------------------------
+</code></pre>
+
+<h2 id="widths">Widths</h2>
+
+<pre><code>.cell-width-20 {
+  flex: 0 0 20%;
+}
+</code></pre>
+
+<h3 id="example-2">Example</h3>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="cell cell-width-20"&gt;first&lt;/div&gt;
+  &lt;div class="cell"&gt;second&lt;/div&gt;
+  &lt;div class="cell"&gt;third&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>In this example the first cell is 20% the width of the grid, the other two share the remaining space equally.</p>
+
+<pre><code>-------------------------------------
+| first        | second   | third   |
+-------------------------------------
+</code></pre>
+
+<h2 id="offsets">Offsets</h2>
+
+<pre><code>.cell-offset-20 {
+  margin-left: 20%;
+}
+</code></pre>
+
+<h3 id="example-3">Example</h3>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="cell cell-width-10"&gt;first&lt;/div&gt;
+  &lt;div class="cell cell-width-10 cell-offset-80"&gt;second&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Adding <code>cell-offset-80</code> will add a <code>margin-left: 80%</code> to the cell, pushing it right.</p>
+
+<pre><code>---------                  ----------
+| first |                  | second |
+---------                  ----------
+</code></pre>
+
+<h2 id="wrapping">Wrapping</h2>
+
+<pre><code>.grid-wrap {
+  flex-wrap: wrap;
+}
+</code></pre>
+
+<h3 id="example-4">Example</h3>
+
+<p>Here we have 2 cells, 50% and 66.6666% wide, but the grid is only 100% wide…</p>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="cell cell-width-50"&gt;first&lt;/div&gt;
+  &lt;div class="cell cell-width-66"&gt;second&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>this means the cells are now in control and have broken out of their confinment!</p>
+
+<pre><code>&lt;div class="grid grid-wrap"&gt;
+  &lt;div class="cell cell-width-50"&gt;first&lt;/div&gt;
+  &lt;div class="cell cell-width-66"&gt;second&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Adding <code>grid-wrap</code> will push the second cell down under the first cell.</p>
+
+<pre><code>-------------------
+| first           |
+-------------------
+-----------------------
+| second              |
+-----------------------
+</code></pre>
+
+<p><strong>Why not just make this default behaviour?</strong> Leaving this option to the developer provides more flexibility.</p>
+
+<h2 id="vertical-alignment">Vertical alignment</h2>
+
+<pre><code>/* All cells */
+.grid-top {
+  align-items: flex-start;
+}
+.grid-center {
+  align-items: center;
+}
+.grid-bottom {
+  align-items: flex-end;
+}
+
+/* Individual cells */
+.cell-top {
+  align-self: flex-start;
+}
+.cell-center {
+  align-self: center;
+}
+.cell-bottom {
+  align-self: flex-end;
+}
+</code></pre>
+
+<h3 id="example-5">Example</h3>
+
+<pre><code>&lt;div class="grid grid-bottom"&gt;
+  &lt;div class="cell cell-top"&gt;first&lt;/div&gt;
+  &lt;div class="cell cell-center"&gt;second&lt;/div&gt;
+  &lt;div class="cell"&gt;third&lt;/div&gt; &lt;!-- grid-bottom pushes this to the bottom --&gt;
+  &lt;div class="cell"&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Notice there are two vertical aligment rules being applied to this grid. A grid wide rule of <code>grid-bottom</code> that pushes everything to the bottom, and per cell alignment rules of <code>cell-top</code> and <code>cell-center</code> that vertically align the cells to the top and center of the grid respectively.</p>
+
+<pre><code>------------                        -------------
+| first    |                        | fourth    |
+------------                        |           |
+                                    | fourth    |
+            -------------           |           |
+            | second    |           | fourth    |
+            -------------           |           |
+                                    | fourth    |
+                        -------------           |
+                        | third     | fourth    |
+                        -------------------------
+</code></pre>
+
+<h2 id="responsiveness">Responsiveness</h2>
+
+<pre><code>@media (min-width: 24em) and (max-width: 48em) {
+  .grid-medium-fit &gt; .cell:not([class*="cell-width"]) {
+    flex: 1;
+  }
+  .grid-medium-full {
+    flex-wrap: wrap;
+  }
+  .grid-medium-full &gt; .cell {
+    flex: 0 0 100%;
+    margin-left: 0;
+  }
+}
+</code></pre>
+
+<h3 id="example-6">Example</h3>
+
+<p>Let’s make this grid thing respond to different screen sizes…</p>
+
+<pre><code>&lt;div class="grid grid-small-full grid-medium-fit grid-large-full"&gt;
+  &lt;div class="cell cell-top"&gt;first&lt;/div&gt;
+  &lt;div class="cell cell-center"&gt;second&lt;/div&gt;
+  &lt;div class="cell"&gt;third&lt;/div&gt; &lt;!-- grid-bottom pushes this to bottom --&gt;
+  &lt;div class="cell"&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;fourth
+    &lt;br&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<ul>
+  <li><code>.grid-small-full</code> this rule makes the cells full width but only when the screen is small</li>
+  <li><code>.grid-medium-fit</code> makes the cells share the space, but only for medium screens</li>
+  <li><code>.grid-large-full</code> turns it all into columns again</li>
+</ul>
+
+<h2 id="utility-classes">Utility classes</h2>
+
+<p>There are some handy “make visible when small” and “hide when large” rules for you to play with.</p>
+
+<pre><code>.visible-small {
+  display: none;
+}
+.hidden-medium {
+  display: none;
+}
+.hidden-large {
+  display: none;
+}
+</code></pre>
+
+<h3 id="credits">Credits</h3>
+<p>http://philipwalton.github.io/solved-by-flexbox/demos/grids/</p>
+
+<p>http://ionicframework.com/docs/components/#grid</p>
+
+<p>http://getbootstrap.com/css/#grid</p>
+
+<p>http://css-tricks.com/snippets/css/a-guide-to-flexbox/</p>
+
+<h3 id="licence">Licence</h3>
+
+<p>Grid is covered by the MIT Licence</p>
+
+<p>Copyright (c) 2014 Grumpy Wizards</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of<br />
+this software and associated documentation files (the “Software”), to deal in<br />
+the Software without restriction, including without limitation the rights to<br />
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of<br />
+the Software, and to permit persons to whom the Software is furnished to do so,<br />
+subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all<br />
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br />
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS<br />
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR<br />
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER<br />
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN<br />
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	        (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-36978977-3', 'grumpywizards.com');
+	ga('send', 'pageview');
+
+</script>
+</body>
+</html>

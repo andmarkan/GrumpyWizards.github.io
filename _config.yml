@@ -1,0 +1,25 @@
+# Dependencies
+markdown: kramdown
+kramdown:
+  input: GFM
+markdown_ext: markdown,mkdown,mkdn,mkd,md
+highlighter: false
+
+# Permalinks
+permalink: /:title
+
+# Setup
+title: "Grumpy Wizards"
+tagline: "Web Development"
+description: "We're not actually that grumpy, but we are wizards when it comes to code."
+url: http://grumpywizards.com
+
+paginate: 6
+
+# Custom vars
+icon: /img/gw.png
+cover: /img/header.jpg
+
+copyright:
+  author: Grumpy Wizards
+  url: http://grumpywizards.com

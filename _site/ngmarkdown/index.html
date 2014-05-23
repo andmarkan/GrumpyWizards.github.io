@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+	<head>
+	<meta charset="utf-8">
+	<title>ngMarkdown | Grumpy Wizards</title>
+	<meta name="copyright" content="Grumpy Wizards 2014">
+	<meta name="description" content="We're not actually that grumpy, but we are wizards when it comes to code." />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/normalize.min.css">
+	<link rel="stylesheet" href="/css/grid.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+
+</head>
+	<style>
+		.markdown-toolbar {
+			padding: 15px 0;
+		}
+
+		.markdown-toolbar button {
+			text-align: center;
+			text-decoration: none;
+			background-color: transparent;
+			color: #dd3a82;
+			outline: 0;
+			border: 1px solid #dd3a82;
+			border-radius: 6px;
+		}
+
+		.markdown-toolbar button:hover,
+		.markdown-toolbar button:active {
+			background-color: #dd3a82;
+			color: #fff;
+		}
+
+		.markdown-input {
+			width: 100%;
+			height: 600px;
+			padding: 15px;
+			box-sizing: border-box;
+			border: 1px solid #3cf;
+			color: #333;
+			border-radius: 6px;
+			resize: vertical;
+		}
+	</style>
+</head>
+<body ng-controller="HomeCtrl">
+<header class="project-header grid grid-center">
+    <div class="cell cell-width-90 cell-offset-5">
+        <a href="/">
+            <img class="project-logo" src="/img/gw.png" alt="G"></a>
+        <h1 class="project-title">ngMarkdown</h1>
+        <div class="project-description">Mardown editor for AngularJS</div>
+    </div>
+</header>
+
+<div class="content animated fadeInUp">
+	<section class="section container">
+    <div class="grid grid-medium-full">
+        <div class="section-body cell">
+            So many sites use Markdown (mainly because it's awesome!), so why not see how we could integrate a markdown solution into an Angular app? This is my take on it, hopefully you'll see that it is flexible and de-coupled. Download the zip and run the webpage and see how easy it is to use. This plugin uses MarkdownDeep behind the scenes.
+			<p>
+                <a href="https://github.com/GrumpyWizards/ngMarkdown" class="btn">View project on Github</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+	<hr/>
+	<section class="section container">
+		<div class="grid grid-medium-full">
+			<div class="section-body cell">
+				<wiz-markdown content="mdtext"></wiz-markdown>
+			</div>
+		</div>
+	</section>
+	<hr/>
+	<section class="section container" ng-show="loaded">
+		<div class="grid grid-medium-full">
+			<div class="section-body cell">
+				<wiz-markdown-editor content="mdtext">
+					<wiz-toolbar-button command="bold">bold</wiz-toolbar-button>
+					<wiz-toolbar-button command="italic">italic</wiz-toolbar-button>
+					<wiz-toolbar-button command="heading">heading</wiz-toolbar-button>
+					<wiz-toolbar-button command="code">code</wiz-toolbar-button>
+					<wiz-toolbar-button command="ullist">ullist</wiz-toolbar-button>
+					<wiz-toolbar-button command="ollist">ollist</wiz-toolbar-button>
+					<wiz-toolbar-button command="link">link</wiz-toolbar-button>
+					<wiz-toolbar-button command="img">img</wiz-toolbar-button>
+					<wiz-toolbar-button command="hr">hr</wiz-toolbar-button>
+					<wiz-toolbar-button command="undo">undo</wiz-toolbar-button>
+					<wiz-toolbar-button command="redo">redo</wiz-toolbar-button>
+				</wiz-markdown-editor>
+			</div>
+		</div>
+	</section>
+	<hr/>
+</div>
+
+<script src="../ngmarkdown/app/libs/angular-1.2.15/angular.js"></script>
+<script src="../ngmarkdown/app/libs/angular-1.2.15/angular-sanitize.js"></script>
+<script src="../ngmarkdown/app/libs/wizMarkdown/wizMarkdown.min.js"></script>
+
+<script src="../ngmarkdown/app/features/home/home.mod.js"></script>
+<script src="../ngmarkdown/app/features/home/home.ctrl.js"></script>
+
+<script src="../ngmarkdown/app/app.js"></script>
+
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	        (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-36978977-3', 'grumpywizards.com');
+	ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
