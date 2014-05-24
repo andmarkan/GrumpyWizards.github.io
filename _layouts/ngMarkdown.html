@@ -37,7 +37,7 @@
 </head>
 <body ng-controller="HomeCtrl">
 {% include page-header.html %}
-<div class="content animated fadeInUp">
+<div class="content project-content animated fadeInUp">
 	{% include page-intro.html %}
 	<hr/>
 	<section class="section container">
@@ -80,6 +80,10 @@
 <script src="../ngmarkdown/app/app.js"></script>
 
 {% include footer.html %}
-
+<script>
+window.onscroll = function () {
+   document.querySelector('header').style.opacity = ((300-window.pageYOffset)/300);
+};
+</script>
 </body>
 </html>

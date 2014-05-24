@@ -3,59 +3,16 @@
   <channel>
     <title>Grumpy Wizards</title>
     <description>We&#39;re not actually that grumpy, but we are wizards when it comes to code.</description>
-    <link>http://grumpywizards.com/</link>
-    <atom:link href="http://grumpywizards.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>ngMarkdown</title>
         <description>
 </description>
         <pubDate>Fri, 23 May 2014 00:00:00 +0100</pubDate>
-        <link>http://grumpywizards.com/ngmarkdown</link>
-        <guid isPermaLink="true">http://grumpywizards.com/ngmarkdown</guid>
-      </item>
-    
-      <item>
-        <title>ngTemplate</title>
-        <description>&lt;h2 id=&quot;guide&quot;&gt;Guide&lt;/h2&gt;
-
-&lt;p&gt;The basics are simple. Each directory has it’s own file with a short description about the type of code that you should put into it. Below is a more detail description of each directory.&lt;/p&gt;
-
-&lt;h3 id=&quot;root&quot;&gt;Root&lt;/h3&gt;
-
-&lt;p&gt;There are 3 directories here; app, css and img. Lets not insult anyone’s intelligence here and skip css and img.&lt;/p&gt;
-
-&lt;h3 id=&quot;app&quot;&gt;App&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;app&lt;/code&gt; is the home of all our JavaScript &lt;em&gt;and&lt;/em&gt; HTML. Because each component and feature of our application is self-contained they each own their own HTML templates as you’ll see later. &lt;code&gt;app&lt;/code&gt; is also the home of our good friend &lt;code&gt;app.js&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;libs&quot;&gt;Libs&lt;/h3&gt;
-
-&lt;p&gt;Next we have &lt;code&gt;libs&lt;/code&gt;. Ok we’re not going in alphabetical order here but it’s logical trust me! &lt;code&gt;libs&lt;/code&gt; is for our external JavaScript libraries, for example we’ll most definately have AngularJS itself, maybe protractor.js for testing and for the example we could throw in JQuery. The idea of this folder is that nothing inside it changes. You drop your libraries in here and use them in your app and that’s it. As soon as you start tinkering with the code in here you harm upgrading any library you have included.&lt;/p&gt;
-
-&lt;h3 id=&quot;models&quot;&gt;Models&lt;/h3&gt;
-
-&lt;p&gt;Don’t think of &lt;code&gt;models&lt;/code&gt; as your usual data structure, or JavaScript representation of a class diagram. These models are plain and simple objects that help you construct your data correctly before sending it to an external service, that’s pretty much it. I’ve found using these sorts of objects really useful. It helps maintain contracts between you and your APIs.&lt;/p&gt;
-
-&lt;h3 id=&quot;apis&quot;&gt;APIs&lt;/h3&gt;
-
-&lt;p&gt;Your application will almost certainly rely on exposed server side APIs. Firebase or Sendgrid for common examples. Build your Angular factories/services and wrap these APIs inside. Then plop them in this directory. It will help you maintain organisation over your external service dependencies.&lt;/p&gt;
-
-&lt;h3 id=&quot;services&quot;&gt;Services&lt;/h3&gt;
-
-&lt;p&gt;Network related dependencies like APIs won’t be the only logic you rely on. Possibly at some point your application will rely on business logic, enums and calculations perhaps. If so wrap their functionality in an Angular services and drop them in here. I usually put objects representing enums into constants on a module and stored them in this directory.&lt;/p&gt;
-
-&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
-
-&lt;p&gt;If you are truely making use of Angular’s abilities you will no doubt be trying to turn everything into a directive. “This header, could it be a directive?”, “This markdown editor, could it be a directive?”, these are the sorts of questions you should be asking whilst you develop your application. If a piece of functionality is self-contained, has the possibility to be re-used and isn’t a defining characteristic of your application then it’s probably a component.&lt;/p&gt;
-
-&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
-
-&lt;p&gt;Features bring your components together and define the characteristics of your application. They also contain your base templates. So as an example a header component would be utilised by the login feature.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 22 May 2014 00:00:00 +0100</pubDate>
-        <link>http://grumpywizards.com/ngtemplate</link>
-        <guid isPermaLink="true">http://grumpywizards.com/ngtemplate</guid>
+        <link>http://localhost:4000/ngmarkdown</link>
+        <guid isPermaLink="true">http://localhost:4000/ngmarkdown</guid>
       </item>
     
       <item>
@@ -210,291 +167,9 @@
 
 &lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 21 May 2014 00:00:00 +0100</pubDate>
-        <link>http://grumpywizards.com/ngvalidation</link>
-        <guid isPermaLink="true">http://grumpywizards.com/ngvalidation</guid>
-      </item>
-    
-      <item>
-        <title>Angular</title>
-        <description>&lt;h2 id=&quot;feature-driven-development&quot;&gt;Feature Driven Development&lt;/h2&gt;
-&lt;p&gt;See: http://www.johnpapa.net/angular-growth-structure/&lt;/p&gt;
-
-&lt;p&gt;Feature driven development is more about how you organise and structure your application than how you code the functionality. Rather than produce 1 large complicated app you create discreet pieces and couple them together. &lt;/p&gt;
-
-&lt;h3 id=&quot;by-type---no&quot;&gt;By type - No&lt;/h3&gt;
-&lt;p&gt;Files organised by type means having your controllers, services, &lt;br /&gt;
-filters, directives, views etc. placed in their respective folders. &lt;br /&gt;
-Nothing is discrete, development and testing is done in large &lt;br /&gt;
-blocks. Large applications quickly become overly complex.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;|
-|- controllers
-|--- controllers.mod.js
-|--- home.ctrl.js
-|--- about.ctrl.js
-|--- contact.ctrl.js
-|--- login.ctrl.js
-|- services
-|--- auth.svc.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;by-feature---yes&quot;&gt;By Feature - Yes&lt;/h3&gt;
-&lt;p&gt;The application is organised by the self-contained features that it&lt;br /&gt;
-requires. Each feature can be plugged into or out of the application&lt;br /&gt;
-with relative ease. It is not baked directly into the application’s&lt;br /&gt;
-foundations. Both development and testing is conducted within the&lt;br /&gt;
-scope of each feature.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;|
-|- home
-|--- home.mod.js
-|--- home.ctrl.js
-|- about
-|--- about.mod.js
-|--- about.ctrl.js
-|- contact
-|--- contact.mod.js
-|--- contact.ctrl.js
-|- login
-|--- login.mod.js
-|--- login.ctrl.js
-|--- auth.svc.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; &lt;br /&gt;
-for an example of how to organise your application and what each &lt;br /&gt;
-directory is used for.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;module-declaration&quot;&gt;Module Declaration&lt;/h2&gt;
-&lt;p&gt;Modules should be declared using the global &lt;code&gt;angular&lt;/code&gt; variable like so:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// app module
-angular.module(&#39;demo&#39;, [
-               &#39;demo.features.login&#39;
-]);
-
-// sub-module
-angular.module(&#39;demo.features.login&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;No additional globabl variables are required&lt;/li&gt;
-  &lt;li&gt;You can access your modules from everywhere &lt;/li&gt;
-  &lt;li&gt;Modules can be placed into different files&lt;/li&gt;
-  &lt;li&gt;You can use the function-form of &lt;code&gt;use strict&lt;/code&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;dependency-injection&quot;&gt;Dependency Injection&lt;/h2&gt;
-&lt;p&gt;See: http://docs.angularjs.org/guide/dev_guide.services.managing_dependencies&lt;/p&gt;
-
-&lt;p&gt;There are two types of dependencies you can include in your modules &lt;br /&gt;
-and controllers. The first is listing your required modules and the&lt;br /&gt;
-second is injecting services into your controllers.&lt;/p&gt;
-
-&lt;h3 id=&quot;requiring-modules&quot;&gt;Requiring modules&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;angular.module(&#39;demo&#39;, [
-               &#39;demo.features.login
-])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is a fairly standard process of how we require modules in AngularJS. &lt;br /&gt;
-Naming conventions are covered in the next section but you can see here &lt;br /&gt;
-that required modules should be grouped by feature.&lt;/p&gt;
-
-&lt;h3 id=&quot;injecting-dependencies&quot;&gt;Injecting dependencies&lt;/h3&gt;
-
-&lt;p&gt;Should be done explicity to prevent errors during minification and disjointed&lt;br /&gt;
-dependencies within your code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.controller(&#39;homeCtrl&#39;, [&#39;$scope&#39;, &#39;$state&#39;, function ($scope, $state) { }])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;naming-conventions&quot;&gt;Naming Conventions&lt;/h2&gt;
-&lt;p&gt;It is important to provide distinct names to components of your &lt;br /&gt;
-application. This mitigates the possibility that the angular source,&lt;br /&gt;
-3rd party libraries and shared components will have clashing module &lt;br /&gt;
-names, giving unexpected results.&lt;/p&gt;
-
-&lt;h3 id=&quot;prefixing&quot;&gt;Prefixing&lt;/h3&gt;
-&lt;p&gt;All components (directives, controllers, services) must be&lt;br /&gt;
-prefixed with an identifier that is relevant to their scope:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;if shared across all applications use a company prefix: ‘wiz’ for Grumpy&lt;br /&gt;
-Wizards for example.&lt;/li&gt;
-  &lt;li&gt;if exclusive to an application use an application prefix: ‘todo’ if&lt;br /&gt;
-Grumpy Wizards built a todo list app for example.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controllers do not need to be prefixed&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;postfixing&quot;&gt;Postfixing&lt;/h3&gt;
-&lt;p&gt;The following component types should be postfixed as per the examples below:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Controllers: MarkdownCtrl&lt;/li&gt;
-  &lt;li&gt;Services: wizMarkdownSvc&lt;/li&gt;
-  &lt;li&gt;Filters: wizMarkdownFltr&lt;/li&gt;
-  &lt;li&gt;Directives: do not require postfixing wizMarkdown &amp;gt; becomes &lt;code&gt;wiz-markdown&lt;/code&gt; in markup.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;capitalisation&quot;&gt;Capitalisation&lt;/h3&gt;
-&lt;p&gt;Controllers are considered classes and as such they should have a leading&lt;br /&gt;
-capital letter: MarkdownCtrl, all other components should start with lower&lt;br /&gt;
-case e.g. wizMarkdown.&lt;/p&gt;
-
-&lt;h3 id=&quot;modules&quot;&gt;Modules&lt;/h3&gt;
-&lt;p&gt;Module namespacing format should following this pattern:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;application&amp;gt;.&amp;lt;[api,component,feature,service]&amp;gt;.&amp;lt;name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Examples:&lt;br /&gt;
-- wiz.service.addNumbers&lt;br /&gt;
-- todo.component.markdown&lt;br /&gt;
-- reader.todo.api.email&lt;br /&gt;
-- users.feature.about&lt;/p&gt;
-
-&lt;h3 id=&quot;filenames&quot;&gt;Filenames&lt;/h3&gt;
-&lt;p&gt;To aid readability in the solution the type of component should be &lt;br /&gt;
-appended to each file name, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;dashboard.mod.js  - the module declaration&lt;/li&gt;
-  &lt;li&gt;dashboard.dir.js – a directive&lt;/li&gt;
-  &lt;li&gt;dashboard.svc.js – a service or factory&lt;/li&gt;
-  &lt;li&gt;dashboard.ctrl.js – a controller&lt;/li&gt;
-  &lt;li&gt;dashboard.flt.js – a filter &lt;/li&gt;
-  &lt;li&gt;dashboard.tpl.html – the template&lt;/li&gt;
-  &lt;li&gt;dashboard.spec.js – the unit tests&lt;/li&gt;
-  &lt;li&gt;dashboard.spec.conf.js – unit tests config&lt;/li&gt;
-  &lt;li&gt;dashboard.feature – cucumber specificiation for testing&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;html-templates-and-logic&quot;&gt;HTML Templates and Logic&lt;/h2&gt;
-&lt;p&gt;See: http://docs.angularjs.org/guide/templates&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;An Angular template is the declarative specification that, &lt;br /&gt;
-along with information from the model and controller, becomes &lt;br /&gt;
-the rendered view that a user sees in the browser. It is the &lt;br /&gt;
-static DOM, containing HTML, CSS, and angular-specific elements &lt;br /&gt;
-and angular-specific element attributes. The Angular elements &lt;br /&gt;
-and attributes direct angular to add behaviour and transform &lt;br /&gt;
-the template DOM into the dynamic view DOM.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The AngularJS Team&lt;/p&gt;
-
-&lt;p&gt;Don’t write HTML in your JavaScript &lt;em&gt;(unless you are building &lt;br /&gt;
-a distributable directive where templateUrl won’t function &lt;br /&gt;
-correctly, or it’s an abstract state, see routing section)&lt;/em&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$scope.errorMsg = &quot;&amp;lt;strong&amp;gt;Validation failed&amp;lt;/strong&amp;gt;&quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Don’t use logic in your HTML templates, for example the &lt;br /&gt;
-following should not be done:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;alert&quot; ng-show=&quot;players &amp;gt; 20&quot;&amp;gt;Too many players&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You should declare a property or method on scope and use that &lt;br /&gt;
-to drive your HTML conditions.&lt;/p&gt;
-
-&lt;p&gt;Using a declarative approach to logic provides a more maintainable &lt;br /&gt;
-template. If we used &lt;code&gt;players &amp;gt; 20&lt;/code&gt; on multiple HTML elements it &lt;br /&gt;
-would create additional overhead if we were to update that &lt;br /&gt;
-condition. By encapsulating the logic in a property or method &lt;br /&gt;
-it provides both semantically correct mark-up and re-usability.&lt;/p&gt;
-
-&lt;h2 id=&quot;directives&quot;&gt;Directives&lt;/h2&gt;
-&lt;p&gt;See: http://docs.angularjs.org/guide/directive&lt;/p&gt;
-
-&lt;p&gt;Directives are a way to attach a specified behaviour to a DOM &lt;br /&gt;
-element or even to transform an element and its children.&lt;/p&gt;
-
-&lt;h3 id=&quot;attributes&quot;&gt;Attributes&lt;/h3&gt;
-&lt;p&gt;When you are decorating an existing element with new&lt;br /&gt;
-functionality, directives should be applied as attributes.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div wiz-mouse-over=&quot;move()&quot;&amp;gt;Can&#39;t touch this&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The directive in the example above calls the defined behaviour&lt;br /&gt;
-when a mouse moves over an element. It is generic, reusable and &lt;br /&gt;
-does not change the element beyond the bounds of the mouse event.&lt;/p&gt;
-
-&lt;p&gt;These directives should be developed in a generic way, with &lt;br /&gt;
-minimal understanding of the element content and can be used across &lt;br /&gt;
-an application.&lt;/p&gt;
-
-&lt;h3 id=&quot;elements&quot;&gt;Elements&lt;/h3&gt;
-&lt;p&gt;When creating self-contained components, you should use the element &lt;br /&gt;
-notation. This allows us to describe functionality in templates by &lt;br /&gt;
-applying directives as a &lt;strong&gt;domain specific language&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;wiz-markdown&amp;gt;&amp;lt;/wiz-markdown&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Each element is responsible for delivering its described functionality &lt;br /&gt;
-and should have ‘replace’ set to true in order to tidy up the html &lt;br /&gt;
-after they are compiled.&lt;/p&gt;
-
-&lt;p&gt;The parent template is more descriptive and easier to maintain as you &lt;br /&gt;
-can simply switch functionality on or off by adding or removing the element.&lt;/p&gt;
-
-&lt;p&gt;Element directives should be placed alongside their corresponding feature. &lt;/p&gt;
-
-&lt;h2 id=&quot;filters&quot;&gt;Filters&lt;/h2&gt;
-&lt;p&gt;See: http://docs.angularjs.org/guide/filter&lt;/p&gt;
-
-&lt;p&gt;Filters should be organised in accordance to their parent features, &lt;br /&gt;
-unless they are designed to provide commonly accessible functionality.&lt;/p&gt;
-
-&lt;h3 id=&quot;performance-of-filters&quot;&gt;Performance of filters&lt;/h3&gt;
-&lt;p&gt;Angular continuously conducts “dirty-checking”, in essence it is &lt;br /&gt;
-looking for changes to values over and over again and raising events &lt;br /&gt;
-for $watch and $filter to hook into. If you place a filter on your &lt;br /&gt;
-HTML page like so:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div ng-bind=&quot;item.amount | roundDown&quot;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Don’t be surprise if it starts at some point executing A LOT repeatedly.&lt;br /&gt;
-If you place the above code inside a repeater you are essentially &lt;br /&gt;
-increasing the filter execution by a factor of the number of items &lt;br /&gt;
-within the repeater’s array.&lt;/p&gt;
-
-&lt;p&gt;If possible, you should apply filters to your data before binding to your view&lt;/p&gt;
-
-&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
-&lt;p&gt;Services are responsible for the business logic in your application.&lt;/p&gt;
-
-&lt;p&gt;UI logic, when to disable a button for example, should not be &lt;br /&gt;
-carried out in a service.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; for&lt;br /&gt;
-further info on where to place your business logic&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;routers&quot;&gt;Routers&lt;/h2&gt;
-&lt;p&gt;See: https://github.com/angular-ui/ui-router&lt;/p&gt;
-
-&lt;h3 id=&quot;angularui-router&quot;&gt;AngularUI Router&lt;/h3&gt;
-&lt;p&gt;All routing should be conducted using AngularUI Router. AngularUI &lt;br /&gt;
-Router is an external plugin used to convert your application into&lt;br /&gt;
-a state machine. ngRoute uses the URL to drive navigation. uiRouter &lt;br /&gt;
-reverses your app’s relationship with the URL. It uses states to&lt;br /&gt;
-navigate and it drives changes to the URL rather than the URL driving &lt;br /&gt;
-changes to your app.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/angular-ui/ui-router&quot;&gt;Please familiarise yourself with the AngularUI &lt;br /&gt;
-Router documentation&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 20 May 2014 00:00:00 +0100</pubDate>
-        <link>http://grumpywizards.com/angular</link>
-        <guid isPermaLink="true">http://grumpywizards.com/angular</guid>
+        <pubDate>Thu, 22 May 2014 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/ngvalidation</link>
+        <guid isPermaLink="true">http://localhost:4000/ngvalidation</guid>
       </item>
     
       <item>
@@ -796,9 +471,334 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER&l
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN&lt;br /&gt;
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;
 </description>
+        <pubDate>Wed, 21 May 2014 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/grid</link>
+        <guid isPermaLink="true">http://localhost:4000/grid</guid>
+      </item>
+    
+      <item>
+        <title>ngTemplate</title>
+        <description>&lt;h2 id=&quot;guide&quot;&gt;Guide&lt;/h2&gt;
+
+&lt;p&gt;The basics are simple. Each directory has it’s own file with a short description about the type of code that you should put into it. Below is a more detail description of each directory.&lt;/p&gt;
+
+&lt;h3 id=&quot;root&quot;&gt;Root&lt;/h3&gt;
+
+&lt;p&gt;There are 3 directories here; app, css and img. Lets not insult anyone’s intelligence here and skip css and img.&lt;/p&gt;
+
+&lt;h3 id=&quot;app&quot;&gt;App&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt; is the home of all our JavaScript &lt;em&gt;and&lt;/em&gt; HTML. Because each component and feature of our application is self-contained they each own their own HTML templates as you’ll see later. &lt;code&gt;app&lt;/code&gt; is also the home of our good friend &lt;code&gt;app.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;libs&quot;&gt;Libs&lt;/h3&gt;
+
+&lt;p&gt;Next we have &lt;code&gt;libs&lt;/code&gt;. Ok we’re not going in alphabetical order here but it’s logical trust me! &lt;code&gt;libs&lt;/code&gt; is for our external JavaScript libraries, for example we’ll most definately have AngularJS itself, maybe protractor.js for testing and for the example we could throw in JQuery. The idea of this folder is that nothing inside it changes. You drop your libraries in here and use them in your app and that’s it. As soon as you start tinkering with the code in here you harm upgrading any library you have included.&lt;/p&gt;
+
+&lt;h3 id=&quot;models&quot;&gt;Models&lt;/h3&gt;
+
+&lt;p&gt;Don’t think of &lt;code&gt;models&lt;/code&gt; as your usual data structure, or JavaScript representation of a class diagram. These models are plain and simple objects that help you construct your data correctly before sending it to an external service, that’s pretty much it. I’ve found using these sorts of objects really useful. It helps maintain contracts between you and your APIs.&lt;/p&gt;
+
+&lt;h3 id=&quot;apis&quot;&gt;APIs&lt;/h3&gt;
+
+&lt;p&gt;Your application will almost certainly rely on exposed server side APIs. Firebase or Sendgrid for common examples. Build your Angular factories/services and wrap these APIs inside. Then plop them in this directory. It will help you maintain organisation over your external service dependencies.&lt;/p&gt;
+
+&lt;h3 id=&quot;services&quot;&gt;Services&lt;/h3&gt;
+
+&lt;p&gt;Network related dependencies like APIs won’t be the only logic you rely on. Possibly at some point your application will rely on business logic, enums and calculations perhaps. If so wrap their functionality in an Angular services and drop them in here. I usually put objects representing enums into constants on a module and stored them in this directory.&lt;/p&gt;
+
+&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
+
+&lt;p&gt;If you are truely making use of Angular’s abilities you will no doubt be trying to turn everything into a directive. “This header, could it be a directive?”, “This markdown editor, could it be a directive?”, these are the sorts of questions you should be asking whilst you develop your application. If a piece of functionality is self-contained, has the possibility to be re-used and isn’t a defining characteristic of your application then it’s probably a component.&lt;/p&gt;
+
+&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
+
+&lt;p&gt;Features bring your components together and define the characteristics of your application. They also contain your base templates. So as an example a header component would be utilised by the login feature.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 May 2014 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/ngtemplate</link>
+        <guid isPermaLink="true">http://localhost:4000/ngtemplate</guid>
+      </item>
+    
+      <item>
+        <title>Angular</title>
+        <description>&lt;h2 id=&quot;feature-driven-development&quot;&gt;Feature Driven Development&lt;/h2&gt;
+&lt;p&gt;See: http://www.johnpapa.net/angular-growth-structure/&lt;/p&gt;
+
+&lt;p&gt;Feature driven development is more about how you organise and structure your application than how you code the functionality. Rather than produce 1 large complicated app you create discreet pieces and couple them together. &lt;/p&gt;
+
+&lt;h3 id=&quot;by-type---no&quot;&gt;By type - No&lt;/h3&gt;
+&lt;p&gt;Files organised by type means having your controllers, services, &lt;br /&gt;
+filters, directives, views etc. placed in their respective folders. &lt;br /&gt;
+Nothing is discrete, development and testing is done in large &lt;br /&gt;
+blocks. Large applications quickly become overly complex.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|
+|- controllers
+|--- controllers.mod.js
+|--- home.ctrl.js
+|--- about.ctrl.js
+|--- contact.ctrl.js
+|--- login.ctrl.js
+|- services
+|--- auth.svc.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;by-feature---yes&quot;&gt;By Feature - Yes&lt;/h3&gt;
+&lt;p&gt;The application is organised by the self-contained features that it&lt;br /&gt;
+requires. Each feature can be plugged into or out of the application&lt;br /&gt;
+with relative ease. It is not baked directly into the application’s&lt;br /&gt;
+foundations. Both development and testing is conducted within the&lt;br /&gt;
+scope of each feature.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|
+|- home
+|--- home.mod.js
+|--- home.ctrl.js
+|- about
+|--- about.mod.js
+|--- about.ctrl.js
+|- contact
+|--- contact.mod.js
+|--- contact.ctrl.js
+|- login
+|--- login.mod.js
+|--- login.ctrl.js
+|--- auth.svc.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; &lt;br /&gt;
+for an example of how to organise your application and what each &lt;br /&gt;
+directory is used for.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;module-declaration&quot;&gt;Module Declaration&lt;/h2&gt;
+&lt;p&gt;Modules should be declared using the global &lt;code&gt;angular&lt;/code&gt; variable like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// app module
+angular.module(&#39;demo&#39;, [
+               &#39;demo.features.login&#39;
+]);
+
+// sub-module
+angular.module(&#39;demo.features.login&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No additional globabl variables are required&lt;/li&gt;
+  &lt;li&gt;You can access your modules from everywhere &lt;/li&gt;
+  &lt;li&gt;Modules can be placed into different files&lt;/li&gt;
+  &lt;li&gt;You can use the function-form of &lt;code&gt;use strict&lt;/code&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dependency-injection&quot;&gt;Dependency Injection&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/dev_guide.services.managing_dependencies&lt;/p&gt;
+
+&lt;p&gt;There are two types of dependencies you can include in your modules &lt;br /&gt;
+and controllers. The first is listing your required modules and the&lt;br /&gt;
+second is injecting services into your controllers.&lt;/p&gt;
+
+&lt;h3 id=&quot;requiring-modules&quot;&gt;Requiring modules&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;angular.module(&#39;demo&#39;, [
+               &#39;demo.features.login
+])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a fairly standard process of how we require modules in AngularJS. &lt;br /&gt;
+Naming conventions are covered in the next section but you can see here &lt;br /&gt;
+that required modules should be grouped by feature.&lt;/p&gt;
+
+&lt;h3 id=&quot;injecting-dependencies&quot;&gt;Injecting dependencies&lt;/h3&gt;
+
+&lt;p&gt;Should be done explicity to prevent errors during minification and disjointed&lt;br /&gt;
+dependencies within your code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.controller(&#39;homeCtrl&#39;, [&#39;$scope&#39;, &#39;$state&#39;, function ($scope, $state) { }])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;naming-conventions&quot;&gt;Naming Conventions&lt;/h2&gt;
+&lt;p&gt;It is important to provide distinct names to components of your &lt;br /&gt;
+application. This mitigates the possibility that the angular source,&lt;br /&gt;
+3rd party libraries and shared components will have clashing module &lt;br /&gt;
+names, giving unexpected results.&lt;/p&gt;
+
+&lt;h3 id=&quot;prefixing&quot;&gt;Prefixing&lt;/h3&gt;
+&lt;p&gt;All components (directives, controllers, services) must be&lt;br /&gt;
+prefixed with an identifier that is relevant to their scope:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if shared across all applications use a company prefix: ‘wiz’ for Grumpy&lt;br /&gt;
+Wizards for example.&lt;/li&gt;
+  &lt;li&gt;if exclusive to an application use an application prefix: ‘todo’ if&lt;br /&gt;
+Grumpy Wizards built a todo list app for example.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controllers do not need to be prefixed&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;postfixing&quot;&gt;Postfixing&lt;/h3&gt;
+&lt;p&gt;The following component types should be postfixed as per the examples below:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Controllers: MarkdownCtrl&lt;/li&gt;
+  &lt;li&gt;Services: wizMarkdownSvc&lt;/li&gt;
+  &lt;li&gt;Filters: wizMarkdownFltr&lt;/li&gt;
+  &lt;li&gt;Directives: do not require postfixing wizMarkdown &amp;gt; becomes &lt;code&gt;wiz-markdown&lt;/code&gt; in markup.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;capitalisation&quot;&gt;Capitalisation&lt;/h3&gt;
+&lt;p&gt;Controllers are considered classes and as such they should have a leading&lt;br /&gt;
+capital letter: MarkdownCtrl, all other components should start with lower&lt;br /&gt;
+case e.g. wizMarkdown.&lt;/p&gt;
+
+&lt;h3 id=&quot;modules&quot;&gt;Modules&lt;/h3&gt;
+&lt;p&gt;Module namespacing format should following this pattern:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;application&amp;gt;.&amp;lt;[api,component,feature,service]&amp;gt;.&amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Examples:&lt;br /&gt;
+- wiz.service.addNumbers&lt;br /&gt;
+- todo.component.markdown&lt;br /&gt;
+- reader.todo.api.email&lt;br /&gt;
+- users.feature.about&lt;/p&gt;
+
+&lt;h3 id=&quot;filenames&quot;&gt;Filenames&lt;/h3&gt;
+&lt;p&gt;To aid readability in the solution the type of component should be &lt;br /&gt;
+appended to each file name, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dashboard.mod.js  - the module declaration&lt;/li&gt;
+  &lt;li&gt;dashboard.dir.js – a directive&lt;/li&gt;
+  &lt;li&gt;dashboard.svc.js – a service or factory&lt;/li&gt;
+  &lt;li&gt;dashboard.ctrl.js – a controller&lt;/li&gt;
+  &lt;li&gt;dashboard.flt.js – a filter &lt;/li&gt;
+  &lt;li&gt;dashboard.tpl.html – the template&lt;/li&gt;
+  &lt;li&gt;dashboard.spec.js – the unit tests&lt;/li&gt;
+  &lt;li&gt;dashboard.spec.conf.js – unit tests config&lt;/li&gt;
+  &lt;li&gt;dashboard.feature – cucumber specificiation for testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;html-templates-and-logic&quot;&gt;HTML Templates and Logic&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/templates&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An Angular template is the declarative specification that, &lt;br /&gt;
+along with information from the model and controller, becomes &lt;br /&gt;
+the rendered view that a user sees in the browser. It is the &lt;br /&gt;
+static DOM, containing HTML, CSS, and angular-specific elements &lt;br /&gt;
+and angular-specific element attributes. The Angular elements &lt;br /&gt;
+and attributes direct angular to add behaviour and transform &lt;br /&gt;
+the template DOM into the dynamic view DOM.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The AngularJS Team&lt;/p&gt;
+
+&lt;p&gt;Don’t write HTML in your JavaScript &lt;em&gt;(unless you are building &lt;br /&gt;
+a distributable directive where templateUrl won’t function &lt;br /&gt;
+correctly, or it’s an abstract state, see routing section)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$scope.errorMsg = &quot;&amp;lt;strong&amp;gt;Validation failed&amp;lt;/strong&amp;gt;&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don’t use logic in your HTML templates, for example the &lt;br /&gt;
+following should not be done:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;alert&quot; ng-show=&quot;players &amp;gt; 20&quot;&amp;gt;Too many players&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You should declare a property or method on scope and use that &lt;br /&gt;
+to drive your HTML conditions.&lt;/p&gt;
+
+&lt;p&gt;Using a declarative approach to logic provides a more maintainable &lt;br /&gt;
+template. If we used &lt;code&gt;players &amp;gt; 20&lt;/code&gt; on multiple HTML elements it &lt;br /&gt;
+would create additional overhead if we were to update that &lt;br /&gt;
+condition. By encapsulating the logic in a property or method &lt;br /&gt;
+it provides both semantically correct mark-up and re-usability.&lt;/p&gt;
+
+&lt;h2 id=&quot;directives&quot;&gt;Directives&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/directive&lt;/p&gt;
+
+&lt;p&gt;Directives are a way to attach a specified behaviour to a DOM &lt;br /&gt;
+element or even to transform an element and its children.&lt;/p&gt;
+
+&lt;h3 id=&quot;attributes&quot;&gt;Attributes&lt;/h3&gt;
+&lt;p&gt;When you are decorating an existing element with new&lt;br /&gt;
+functionality, directives should be applied as attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div wiz-mouse-over=&quot;move()&quot;&amp;gt;Can&#39;t touch this&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The directive in the example above calls the defined behaviour&lt;br /&gt;
+when a mouse moves over an element. It is generic, reusable and &lt;br /&gt;
+does not change the element beyond the bounds of the mouse event.&lt;/p&gt;
+
+&lt;p&gt;These directives should be developed in a generic way, with &lt;br /&gt;
+minimal understanding of the element content and can be used across &lt;br /&gt;
+an application.&lt;/p&gt;
+
+&lt;h3 id=&quot;elements&quot;&gt;Elements&lt;/h3&gt;
+&lt;p&gt;When creating self-contained components, you should use the element &lt;br /&gt;
+notation. This allows us to describe functionality in templates by &lt;br /&gt;
+applying directives as a &lt;strong&gt;domain specific language&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;wiz-markdown&amp;gt;&amp;lt;/wiz-markdown&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Each element is responsible for delivering its described functionality &lt;br /&gt;
+and should have ‘replace’ set to true in order to tidy up the html &lt;br /&gt;
+after they are compiled.&lt;/p&gt;
+
+&lt;p&gt;The parent template is more descriptive and easier to maintain as you &lt;br /&gt;
+can simply switch functionality on or off by adding or removing the element.&lt;/p&gt;
+
+&lt;p&gt;Element directives should be placed alongside their corresponding feature. &lt;/p&gt;
+
+&lt;h2 id=&quot;filters&quot;&gt;Filters&lt;/h2&gt;
+&lt;p&gt;See: http://docs.angularjs.org/guide/filter&lt;/p&gt;
+
+&lt;p&gt;Filters should be organised in accordance to their parent features, &lt;br /&gt;
+unless they are designed to provide commonly accessible functionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;performance-of-filters&quot;&gt;Performance of filters&lt;/h3&gt;
+&lt;p&gt;Angular continuously conducts “dirty-checking”, in essence it is &lt;br /&gt;
+looking for changes to values over and over again and raising events &lt;br /&gt;
+for $watch and $filter to hook into. If you place a filter on your &lt;br /&gt;
+HTML page like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div ng-bind=&quot;item.amount | roundDown&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don’t be surprise if it starts at some point executing A LOT repeatedly.&lt;br /&gt;
+If you place the above code inside a repeater you are essentially &lt;br /&gt;
+increasing the filter execution by a factor of the number of items &lt;br /&gt;
+within the repeater’s array.&lt;/p&gt;
+
+&lt;p&gt;If possible, you should apply filters to your data before binding to your view&lt;/p&gt;
+
+&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
+&lt;p&gt;Services are responsible for the business logic in your application.&lt;/p&gt;
+
+&lt;p&gt;UI logic, when to disable a button for example, should not be &lt;br /&gt;
+carried out in a service.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;See the &lt;a href=&quot;http://grumpywizards.com/ngTemplate&quot;&gt;ngTemplate project&lt;/a&gt; for&lt;br /&gt;
+further info on where to place your business logic&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;routers&quot;&gt;Routers&lt;/h2&gt;
+&lt;p&gt;See: https://github.com/angular-ui/ui-router&lt;/p&gt;
+
+&lt;h3 id=&quot;angularui-router&quot;&gt;AngularUI Router&lt;/h3&gt;
+&lt;p&gt;All routing should be conducted using AngularUI Router. AngularUI &lt;br /&gt;
+Router is an external plugin used to convert your application into&lt;br /&gt;
+a state machine. ngRoute uses the URL to drive navigation. uiRouter &lt;br /&gt;
+reverses your app’s relationship with the URL. It uses states to&lt;br /&gt;
+navigate and it drives changes to the URL rather than the URL driving &lt;br /&gt;
+changes to your app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/angular-ui/ui-router&quot;&gt;Please familiarise yourself with the AngularUI &lt;br /&gt;
+Router documentation&lt;/a&gt;&lt;/p&gt;
+</description>
         <pubDate>Mon, 19 May 2014 00:00:00 +0100</pubDate>
-        <link>http://grumpywizards.com/grid</link>
-        <guid isPermaLink="true">http://grumpywizards.com/grid</guid>
+        <link>http://localhost:4000/angular</link>
+        <guid isPermaLink="true">http://localhost:4000/angular</guid>
       </item>
     
   </channel>

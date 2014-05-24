@@ -51,22 +51,6 @@
 	
 	<section class="section container">
 		<div class="grid grid-small-full grid-medium-full grid-center">
-			<h2 class="section-header cell"><a href="/ngtemplate">ngTemplate</a></h2>
-
-			<div class="section-sub-header cell cell-width-65">AngularJS template app structure</div>
-		</div>
-		<div class="grid grid-medium-full">
-			<div class="section-body cell">
-				<p>
-					After building several websites and applications using Angular and evolving my own best practices I'd thought I'd document the first thing I do, the directory structure. Once you have that you can start filling in the gaps and really think about the construction of your Angular app
-				</p>
-			</div>
-		</div>
-	</section>
-	<hr/>
-	
-	<section class="section container">
-		<div class="grid grid-small-full grid-medium-full grid-center">
 			<h2 class="section-header cell"><a href="/ngvalidation">ngValidation</a></h2>
 
 			<div class="section-sub-header cell cell-width-65">AngularJS easier form validation</div>
@@ -83,22 +67,6 @@
 	
 	<section class="section container">
 		<div class="grid grid-small-full grid-medium-full grid-center">
-			<h2 class="section-header cell"><a href="/angular">Angular</a></h2>
-
-			<div class="section-sub-header cell cell-width-65">Best Practices for AngularJS Developers</div>
-		</div>
-		<div class="grid grid-medium-full">
-			<div class="section-body cell">
-				<p>
-					I've used AngularJS a lot over the past couple of years and I've found more often than not that there are at least 3 different way of accomplishing the same thing. I've always thought a guide of how best to use it would be helpful. So here it is.
-				</p>
-			</div>
-		</div>
-	</section>
-	<hr/>
-	
-	<section class="section container">
-		<div class="grid grid-small-full grid-medium-full grid-center">
 			<h2 class="section-header cell"><a href="/grid">Grid</a></h2>
 
 			<div class="section-sub-header cell cell-width-65">Simple CSS grid for flexible layouts</div>
@@ -107,6 +75,38 @@
 			<div class="section-body cell">
 				<p>
 					Uses flexbox to produce flexible easy to use classes for rows and columns. There are 2 versions of Grid. A modern version and one with -prefixes- for better browser support.
+				</p>
+			</div>
+		</div>
+	</section>
+	<hr/>
+	
+	<section class="section container">
+		<div class="grid grid-small-full grid-medium-full grid-center">
+			<h2 class="section-header cell"><a href="/ngtemplate">ngTemplate</a></h2>
+
+			<div class="section-sub-header cell cell-width-65">AngularJS template app structure</div>
+		</div>
+		<div class="grid grid-medium-full">
+			<div class="section-body cell">
+				<p>
+					After building several websites and applications using Angular and evolving my own best practices I'd thought I'd document the first thing I do, the directory structure. Once you have that you can start filling in the gaps and really think about the construction of your Angular app
+				</p>
+			</div>
+		</div>
+	</section>
+	<hr/>
+	
+	<section class="section container">
+		<div class="grid grid-small-full grid-medium-full grid-center">
+			<h2 class="section-header cell"><a href="/angular">Angular</a></h2>
+
+			<div class="section-sub-header cell cell-width-65">Best Practices for AngularJS Developers</div>
+		</div>
+		<div class="grid grid-medium-full">
+			<div class="section-body cell">
+				<p>
+					I've used AngularJS a lot over the past couple of years and I've found more often than not that there are at least 3 different way of accomplishing the same thing. I've always thought a guide of how best to use it would be helpful. So here it is.
 				</p>
 			</div>
 		</div>
@@ -134,5 +134,10 @@
 	ga('send', 'pageview');
 
 </script>
+<script>
+window.onscroll = function () {
+   document.querySelector('header').style.opacity = ((450-window.pageYOffset)/450);
+};
+</script>	
 </body>
 </html>

@@ -27,7 +27,7 @@
     </div>
 </header>
 
-    <div class="content animated fadeInUp">
+    <div class="content project-content animated fadeInUp">
         <section class="section container">
     <div class="grid grid-medium-full">
         <div class="section-body cell">
@@ -337,5 +337,11 @@ Router documentation</a></p>
 	ga('send', 'pageview');
 
 </script>
+
+    <script>
+        window.onscroll = function () {
+           document.querySelector('header').style.opacity = ((300-window.pageYOffset)/300);
+        };
+    </script>
 </body>
 </html>
