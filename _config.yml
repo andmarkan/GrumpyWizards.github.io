@@ -12,7 +12,7 @@ permalink: /:title
 title: "Grumpy Wizards"
 tagline: "Web Development"
 description: "We're not actually that grumpy, but we are wizards when it comes to code."
-url: http://localhost:4000
+url: http://grumpywizards.com
 baseurl: ""
 
 paginate: 6
