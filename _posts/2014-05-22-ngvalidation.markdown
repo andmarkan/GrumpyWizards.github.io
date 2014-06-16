@@ -103,9 +103,13 @@ Conversely if you are using the whitelist validator you must use one of the valu
 The file validation field has 3 features that are used in conjunction with the `wiz-val-file` attribute directive:
 
 ###File type
-File types are specified by adding `wiz-val-file-type` to the HTML element and providing it an array of acceptable MIME types. For example to check for jpeg and gif files use `wiz-val-file-types="['image/jpeg','image/gif']"`
+File types are specified by adding `wiz-val-file-type` to the HTML element and providing it an array of acceptable MIME types. For example to check for jpeg and gif files use 
 
-      <input type="file" name="file" wiz-val-file wiz-val-file-types="['image/jpeg','image/gif']" />
+    wiz-val-file-types="['image/jpeg','image/gif']"
+    
+Like this:
+
+    <input type="file" name="file" wiz-val-file wiz-val-file-types="['image/jpeg','image/gif']" />
 
 ###File size
 To specify the maximum file size in bytes add the file size attribute e.g. 
