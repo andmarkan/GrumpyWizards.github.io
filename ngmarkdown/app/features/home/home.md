@@ -49,7 +49,9 @@ The editor has a toolbar that you place buttons on by adding them inside the edi
 
 You can specify your own styling and content for each button.
 
-The toolbar is positioned above the editor by default but if you specify `toolbar="bottom"` to the editor e.g. `<wiz-markdown-editor content="mdText" toolbar="bottom">` it will appear below.
+The toolbar is positioned above the editor by default but if you specify `toolbar="bottom"` to the editor it will appear below. e.g.
+
+    <wiz-markdown-editor content="mdText" toolbar="bottom">
 
 ###Available button commands
 
