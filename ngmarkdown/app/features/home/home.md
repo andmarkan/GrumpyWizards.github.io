@@ -78,6 +78,11 @@ h6,
 tab,
 untab
 
+##Textarea only
+If you simply want a textarea without the toolbars then use:
+
+    <wiz-markdown-input content="mdTextarea"></wiz-markdown-input>
+
 #Syntax highlighting
 
 [highlight.js](http://highlightjs.org/) is built in so all you need to do is pick a theme and drop the css link in the head of your webpage e.g.
