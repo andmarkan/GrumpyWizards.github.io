@@ -5,7 +5,7 @@ angular.module('demo.features.home')
 	$scope.mdtext = 'Loading text...';
 	$scope.loaded = false;
 
-	$http.get('/ngMarkdown/app/features/home/home.md').then(function (response) {
+	$http.get('../ngmarkdown/app/features/home/home.md').then(function (response) {
 		$scope.mdtext = response.data;
 		$scope.loaded = true;
 	});
