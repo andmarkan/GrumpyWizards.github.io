@@ -7,8 +7,6 @@
 }
 
 .site-header {
-	position: fixed;
-	top: 0;
 	background-image: url(/img/header.jpg);
 	background-position: bottom;
 	background-repeat: no-repeat;
@@ -17,29 +15,23 @@
 	-o-background-size: cover;
 	background-size: cover;
 	width: 100%;
-	min-height: 45%;
 	padding: 20px 0;
 	color: #fff;
 	text-align: center;
 }
 
 .project-header {
-	position: fixed;
-	top: 0;
 	width: 100%;
-	min-height: 25%;
 	padding: 20px 0;
 	text-align: center;
 }
 
 
 .content {		
-	margin-top: 450px;
 	background: #fff;
 }
 
 .project-content {
-	margin-top: 300px;
 	box-shadow: 0px -2px 7px -5px #000;
 }
 
