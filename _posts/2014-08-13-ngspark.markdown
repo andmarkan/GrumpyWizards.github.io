@@ -7,11 +7,11 @@ github: "https://github.com/GrumpyWizards/ngSpark"
 ---
 
 #How to use
-- Download Node and Grunt and the code from the Repo
+- Download [Node](http://nodejs.org/) and [Grunt](http://gruntjs.com/getting-started) and the code from the Repo
 - `npm install` the the node modules
 - Execute `grunt` to run
 
 #What you'll need
-- A firebase account and app
+- A [Firebase](https://www.firebase.com/login/) account and app
 - Firebase simple login email and password mode enabled
 - `config.js` updating with your Firebase app name
