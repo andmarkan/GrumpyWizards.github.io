@@ -6,3 +6,12 @@ intro: "Firebase is an awesome tool. It is a JSON document storage database, but
 github: "https://github.com/GrumpyWizards/ngSpark"
 ---
 
+#How to use
+- Download Node and Grunt and the code from the Repo
+- `npm install` the the node modules
+- Execute `grunt` to run
+
+#What you'll need
+- A firebase account and app
+- Firebase simple login email and password mode enabled
+- `config.js` updating with your Firebase app name
