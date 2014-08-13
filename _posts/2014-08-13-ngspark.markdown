@@ -1,1 +1,9 @@
 
+---
+layout: page
+title:  "ngSpark"
+description: "An AngularFire Starter App"
+intro: "Firebase is an awesome tool. It is a JSON document storage database, but with some sweet extras. It's got enough support that you can essentially forego any server side code and rely solely on Firebase's excellent API to produce websites and apps. This is a getting started site to help you organised your code and separate concerns clearly and appropriately. Have a play!"
+github: "https://github.com/GrumpyWizards/ngSpark"
+---
+
