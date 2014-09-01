@@ -1,0 +1,15 @@
+---
+layout: page
+title:  "ngSeed"
+description: "An AngularJS Starter App"
+intro: "There is are more than one AngularJS 'seed' app out there but this is mine and personally I think this is easier to follow than others."
+github: "https://github.com/GrumpyWizards/ngSeed"
+---
+
+#How to use
+- Download the code from the Repo
+- `npm install` the the node modules
+- Execute `grunt` to run
+
+#What you'll need
+- If you want to see the authentication working you'll need to fullfil the service request end points in `src/apis/vendor/auth.svc.js`
