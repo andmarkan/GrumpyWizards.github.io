@@ -8,7 +8,7 @@
 
 .site-header {
 	background-image: url(/img/header.jpg);
-	background-position: 0 -280px;
+	background-position: 0;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
