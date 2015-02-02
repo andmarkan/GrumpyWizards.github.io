@@ -6,11 +6,11 @@ intro: "A node seed for applications that need routing, authentication and datab
 github: "https://github.com/GrumpyWizards/NodeSeed"
 ---
 
-#How to use
+# How to use
 - Download the code from the Repo
 - `npm install` the the node modules
 - `node app.js` to run
 
-#What you'll need
+# What you'll need
 - Download, install and setup [MongoDB](http://www.mongodb.org/)
 - A tool like [Postman REST Client](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) to register, login, delete users.
