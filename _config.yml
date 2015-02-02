@@ -14,8 +14,6 @@ tagline: "Web Development"
 url: http://grumpywizards.com
 baseurl: ""
 
-paginate: 6
-
 # Custom vars
 icon: /img/gw.png
 cover: /img/header.jpg
