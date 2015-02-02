@@ -294,7 +294,7 @@ http://getbootstrap.com/css/#grid
 
 http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-###Licence
+### Licence
 
 Grid is covered by the MIT Licence
 
