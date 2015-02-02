@@ -94,11 +94,11 @@ Checks to see if the request is already authenticated, and if so responds with a
     }
 
 
-#### Your own solution required for
+### Your own solution required for
 
 - **Emails** - the server should send emails to users
 
-#### Technology Used
+### Technology Used
 - [NodeJS](http://nodejs.org/)
 - [PassportJS](http://passportjs.org/)
 - [MongoDB](http://www.mongodb.org/)
