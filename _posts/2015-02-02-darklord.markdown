@@ -6,15 +6,6 @@ intro: "Stateless JWT based authentication server"
 github: "https://github.com/GrumpyWizards/DarkLord"
 ---
 
-
-##Technology:
-
-- [NodeJS](http://nodejs.org/)
-- [PassportJS](http://passportjs.org/)
-- [MongoDB](http://www.mongodb.org/)
-- [Mongoose](http://mongoosejs.com/)
-- [JWT Simple](https://www.npmjs.org/package/jwt-simple)
-
 ## API
 
 ### POST /token
@@ -102,7 +93,14 @@ Checks to see if the request is already authenticated, and if so responds with a
       "token": "<authentication-token>"
     }
 
-    
-####Your own solution required for
+
+#### Your own solution required for
 
 - **Emails** - the server should send emails to users
+
+#### Technology Used
+- [NodeJS](http://nodejs.org/)
+- [PassportJS](http://passportjs.org/)
+- [MongoDB](http://www.mongodb.org/)
+- [Mongoose](http://mongoosejs.com/)
+- [JWT Simple](https://www.npmjs.org/package/jwt-simple)
