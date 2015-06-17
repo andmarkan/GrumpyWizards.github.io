@@ -8,13 +8,13 @@ github: "https://github.com/RiotGear"
 
 ## RiotGear - The open source component library for RiotJS
 
-###Ready made components
+### Ready made components
 
 RiotGear was built to help. Help you improve your app development speed. If we've built it already why reinvent the wheel? The components should have all the functionality the majority of people need.
 
 In just a few lines of code you could have an off-canvas slide in [side-menu](https://riotgear.github.io/components/sidemenu), a set of [tabs](https://riotgear.github.io/components/tabs), a bunch of nice [toggles](https://riotgear.github.io/components/toggle) and lots of others. Plus the list of components is increasing all the time.
 
-####CSS
+#### CSS
 
 Each component's css has been scoped so customising them is an accurate but easy task.
 
@@ -22,11 +22,11 @@ The CSS we've written contains just enough style for the components to be useful
 
 If you have an idea for a new component or would like to make a suggestion about anything let us know in the [forum](https://riotgear.github.io/forum) or [raise an issue in GitHub](https://github.com/RiotGear/rg/issues).
 
-###Get the code
+### Get the code
 
 There are a few ways of grabbing the code.
 
-###Install via NPM
+### Install via NPM
 
 RiotGear has been published to NPM.
 
@@ -34,7 +34,7 @@ RiotGear has been published to NPM.
 
 Or alternatively:
 
-###Download the source
+### Download the source
 
 Both versions of the source are available to download:
 
@@ -42,7 +42,7 @@ Both versions of the source are available to download:
 
 » [rg.min.js](https://raw.githubusercontent.com/RiotGear/rg/master/dist/rg.min.js)
 
-###Individual Components
+### Individual Components
 
 Each component is also available from NPM and as a download file.
 
