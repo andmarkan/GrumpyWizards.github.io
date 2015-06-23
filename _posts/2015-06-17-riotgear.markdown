@@ -3,7 +3,7 @@ layout: page
 title:  "RiotGear"
 description: "The open source component library for RiotJS"
 intro: "In just a few lines of code you could have an off-canvas slide in side-menu, a set of tabs, a bunch of nice toggles and lots of others. The list of components is increasing all the time..."
-github: "https://github.com/RiotGear"
+github: "https://riotgear.github.io/"
 ---
 
 ## RiotGear - The open source component library for RiotJS
